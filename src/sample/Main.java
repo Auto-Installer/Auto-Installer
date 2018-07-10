@@ -10,14 +10,19 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        // Loads in our design
+        Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));
+        // Sets up the Stage/Scene
         primaryStage.setTitle("Auto Installer");
-        primaryStage.setScene(new Scene(root, 1280, 720));
+        Scene scene = new Scene(root, 1280, 720);
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 
 
     public static void main(String[] args) {
+        // Gives Java Version
+        System.out.println(System.getProperty("java.version"));
         launch(args);
     }
 }
