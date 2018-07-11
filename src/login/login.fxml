@@ -7,7 +7,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.loginController">
    <children>
       <Pane prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #1DC08F;">
@@ -23,14 +22,14 @@
             </Pane>
             <Pane layoutX="246.0" layoutY="428.0" prefHeight="90.0" prefWidth="790.0">
                <children>
-                  <PasswordField layoutX="103.0" layoutY="15.0" prefHeight="61.0" prefWidth="610.0" promptText="Email">
+                  <TextField layoutX="103.0" layoutY="15.0" prefHeight="61.0" prefWidth="610.0" promptText="Email">
                      <font>
                         <Font size="25.0" />
                      </font>
                      <cursor>
-                        <Cursor fx:constant="HAND" />
+                        <Cursor fx:constant="TEXT" />
                      </cursor>
-                  </PasswordField>
+                  </TextField>
                </children>
             </Pane>
             <Pane layoutX="246.0" layoutY="543.0" prefHeight="90.0" prefWidth="790.0">
@@ -40,9 +39,21 @@
                         <Font size="25.0" />
                      </font>
                      <cursor>
-                        <Cursor fx:constant="HAND" />
+                        <Cursor fx:constant="TEXT" />
                      </cursor>
                   </PasswordField>
+               </children>
+            </Pane>
+            <Pane layoutX="553.0" layoutY="642.0" prefHeight="52.0" prefWidth="206.0">
+               <children>
+                  <Button layoutY="2.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #168E68;" text="Login" textFill="WHITE">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                </children>
             </Pane>
          </children>

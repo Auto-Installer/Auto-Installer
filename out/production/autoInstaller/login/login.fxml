@@ -23,14 +23,14 @@
             </Pane>
             <Pane layoutX="246.0" layoutY="428.0" prefHeight="90.0" prefWidth="790.0">
                <children>
-                  <PasswordField layoutX="103.0" layoutY="15.0" prefHeight="61.0" prefWidth="610.0" promptText="Email">
+                  <TextField layoutX="103.0" layoutY="15.0" prefHeight="61.0" prefWidth="610.0" promptText="Email">
                      <font>
                         <Font size="25.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                  </PasswordField>
+                  </TextField>
                </children>
             </Pane>
             <Pane layoutX="246.0" layoutY="543.0" prefHeight="90.0" prefWidth="790.0">
@@ -43,6 +43,18 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </PasswordField>
+               </children>
+            </Pane>
+            <Pane layoutX="553.0" layoutY="642.0" prefHeight="52.0" prefWidth="206.0">
+               <children>
+                  <Button layoutY="2.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #168E68;" text="Login" textFill="WHITE">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                </children>
             </Pane>
          </children>
