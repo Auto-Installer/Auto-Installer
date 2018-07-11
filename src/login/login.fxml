@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.loginController">
+   <children>
+      <Pane prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #1DC08F;">
+         <children>
+            <Pane layoutX="394.0" layoutY="135.0" prefHeight="265.0" prefWidth="493.0">
+               <children>
+                  <Text fill="WHITE" layoutY="264.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Auto-Installer" textAlignment="CENTER" wrappingWidth="493.0">
+                     <font>
+                        <Font name="Consolas" size="41.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="246.0" layoutY="428.0" prefHeight="90.0" prefWidth="790.0">
+               <children>
+                  <PasswordField layoutX="103.0" layoutY="15.0" prefHeight="61.0" prefWidth="610.0" promptText="Email">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </PasswordField>
+               </children>
+            </Pane>
+            <Pane layoutX="246.0" layoutY="543.0" prefHeight="90.0" prefWidth="790.0">
+               <children>
+                  <PasswordField layoutX="103.0" layoutY="15.0" prefHeight="61.0" prefWidth="610.0" promptText="Password">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </PasswordField>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
