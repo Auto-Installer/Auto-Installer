@@ -7,10 +7,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.loginController">
    <children>
-      <Pane prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #1DC08F;">
+      <Pane AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #1DC08F;">
          <children>
             <Pane layoutX="394.0" layoutY="135.0" prefHeight="265.0" prefWidth="493.0">
                <children>
@@ -28,7 +27,7 @@
                         <Font size="25.0" />
                      </font>
                      <cursor>
-                        <Cursor fx:constant="HAND" />
+                        <Cursor fx:constant="TEXT" />
                      </cursor>
                   </TextField>
                </children>
@@ -40,7 +39,7 @@
                         <Font size="25.0" />
                      </font>
                      <cursor>
-                        <Cursor fx:constant="HAND" />
+                        <Cursor fx:constant="TEXT" />
                      </cursor>
                   </PasswordField>
                </children>
@@ -55,6 +54,18 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
+               </children>
+            </Pane>
+            <Pane layoutX="1066.0" layoutY="745.0" prefHeight="41.0" prefWidth="200.0">
+               <children>
+                  <Text fill="WHITE" layoutX="-4.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Countinue Without Logging In?">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
                </children>
             </Pane>
          </children>
