@@ -22,7 +22,7 @@
             </Pane>
             <Pane layoutX="246.0" layoutY="428.0" prefHeight="90.0" prefWidth="790.0">
                <children>
-                  <TextField layoutX="103.0" layoutY="15.0" prefHeight="61.0" prefWidth="610.0" promptText="Email">
+                  <TextField fx:id="usernameInput" layoutX="103.0" layoutY="15.0" prefHeight="61.0" prefWidth="610.0" promptText="Email">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -34,7 +34,7 @@
             </Pane>
             <Pane layoutX="246.0" layoutY="543.0" prefHeight="90.0" prefWidth="790.0">
                <children>
-                  <PasswordField layoutX="103.0" layoutY="15.0" prefHeight="61.0" prefWidth="610.0" promptText="Password">
+                  <PasswordField  fx:id="passwordInput" layoutX="103.0" layoutY="15.0" prefHeight="61.0" prefWidth="610.0" promptText="Password">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -46,7 +46,7 @@
             </Pane>
             <Pane layoutX="553.0" layoutY="642.0" prefHeight="52.0" prefWidth="206.0">
                <children>
-                  <Button layoutY="2.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #168E68;" text="Login" textFill="WHITE">
+                  <Button fx:id="submitButton" onAction="#submitLogin" layoutY="2.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #168E68;" text="Login" textFill="WHITE">
                      <font>
                         <Font size="22.0" />
                      </font>
@@ -56,9 +56,9 @@
                   </Button>
                </children>
             </Pane>
-            <Pane layoutX="1066.0" layoutY="745.0" prefHeight="41.0" prefWidth="200.0">
+            <Pane fx:id = "skipLoginButton" layoutX="1066.0" layoutY="745.0" prefHeight="41.0" prefWidth="200.0">
                <children>
-                  <Text fill="WHITE" layoutX="-4.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Countinue Without Logging In?">
+                  <Text  fill="WHITE" layoutX="-4.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Countinue Without Logging In?">
                      <font>
                         <Font size="15.0" />
                      </font>
