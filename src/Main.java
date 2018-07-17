@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import login.loginController;
 import home.homeController;
+import javafx.scene.image.Image;
 
 public class Main extends Application {
 
@@ -23,10 +24,11 @@ public class Main extends Application {
         Scene homeScene = new Scene(homePane, 1280, 800);
 
         // injecting home scene into the controller of the login scene
-        loginController loginPaneController = (loginController) loginPaneLoader.getController();
+        loginController loginPaneController = loginPaneLoader.getController();
         loginPaneController.setHomeScene(homeScene);
 
 
+        primaryStage.getIcons().add(new Image("./icon.png"));
         primaryStage.setTitle("Auto-Installer");
         primaryStage.setScene(loginScene);
         primaryStage.show();
