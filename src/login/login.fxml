@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.loginController">
    <children>
-      <Pane AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #1DC08F;">
+      <Pane prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #1DC08F;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Pane layoutX="394.0" layoutY="135.0" prefHeight="265.0" prefWidth="493.0">
                <children>
@@ -34,7 +34,7 @@
             </Pane>
             <Pane layoutX="246.0" layoutY="543.0" prefHeight="90.0" prefWidth="790.0">
                <children>
-                  <PasswordField  fx:id="passwordInput" layoutX="103.0" layoutY="15.0" prefHeight="61.0" prefWidth="610.0" promptText="Password">
+                  <PasswordField fx:id="passwordInput" layoutX="103.0" layoutY="15.0" prefHeight="61.0" prefWidth="610.0" promptText="Password">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -46,7 +46,7 @@
             </Pane>
             <Pane layoutX="553.0" layoutY="642.0" prefHeight="52.0" prefWidth="206.0">
                <children>
-                  <Button fx:id="submitButton" onAction="#submitLogin" layoutY="2.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #168E68;" text="Login" textFill="WHITE">
+                  <Button fx:id="submitButton" layoutY="2.0" mnemonicParsing="false" onAction="#submitLogin" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #168E68;" text="Login" textFill="WHITE">
                      <font>
                         <Font size="22.0" />
                      </font>
@@ -56,16 +56,16 @@
                   </Button>
                </children>
             </Pane>
-            <Pane fx:id = "skipLoginButton" layoutX="1066.0" layoutY="745.0" prefHeight="41.0" prefWidth="200.0">
+            <Pane layoutX="1066.0" layoutY="745.0" prefHeight="41.0" prefWidth="200.0">
                <children>
-                  <Text  fill="WHITE" layoutX="-4.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Countinue Without Logging In?">
+                  <Button onAction="#routeToHome" layoutX="-7.0" layoutY="-8.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="214.0" style="-fx-background-color: rgba(0,0,0,0);" text="Skip Logging In" textFill="WHITE">
                      <font>
-                        <Font size="15.0" />
+                        <Font size="20.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                  </Text>
+                  </Button>
                </children>
             </Pane>
          </children>

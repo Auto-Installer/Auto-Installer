@@ -20,11 +20,23 @@
                   </Text>
                </children>
             </Pane>
-            <CheckBox layoutX="298.0" layoutY="104.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" text="CheckBox">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </CheckBox>
+            <Pane layoutX="259.0" layoutY="72.0" prefHeight="732.0" prefWidth="1021.0">
+               <children>
+                  <CheckBox layoutX="56.0" layoutY="54.0" mnemonicParsing="false" text="CheckBox">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </CheckBox>
+                  <Button layoutX="431.0" layoutY="670.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="160.0" style="-fx-background-color: #1aaa7f;" text="INSTALL" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
          </children></Pane>
       <Pane prefHeight="800.0" prefWidth="261.0" style="-fx-background-color: #1DC08F; -fx-border-image-width: 0 1 0 1;">
          <children>

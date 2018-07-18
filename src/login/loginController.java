@@ -6,6 +6,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 
 import java.awt.*;
 
@@ -14,11 +15,17 @@ import java.awt.*;
 public class loginController {
     @FXML TextField usernameInput;
     @FXML PasswordField passwordInput;
+    @FXML Pane skipLoginButton;
 
     private Scene homeScene;
 
-    public void setHomeScene(Scene scene) {
+    public void setHomeScene(Scene scene){
         homeScene = scene;
+    }
+
+    public void routeToHome(ActionEvent actionEvent){
+        Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        primaryStage.setScene(homeScene);
     }
 
     public void submitLogin(ActionEvent actionEvent){
@@ -33,5 +40,7 @@ public class loginController {
         }
 
     }
+
+
 
 }
