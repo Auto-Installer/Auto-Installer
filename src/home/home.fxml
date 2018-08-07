@@ -20,7 +20,7 @@
                   </Text>
                </children>
             </Pane>
-            <Pane layoutX="259.0" layoutY="72.0" prefHeight="732.0" prefWidth="1021.0">
+            <Pane fx:id="programSelectionDisplay" layoutX="259.0" layoutY="72.0" prefHeight="732.0" prefWidth="1021.0">
                <children>
                   <CheckBox layoutX="56.0" layoutY="54.0" mnemonicParsing="false" text="CheckBox">
                      <font>

@@ -12,6 +12,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        System.out.println(System.getProperty("os.name"));
 
         // Sets Login Stage
         FXMLLoader loginPaneLoader = new FXMLLoader(getClass().getResource("./login/login.fxml"));
