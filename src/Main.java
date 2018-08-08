@@ -4,14 +4,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import login.loginController;
-import home.homeController;
 import javafx.scene.image.Image;
+import server.Data;
 
 public class Main extends Application {
 
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        // Gets the OS name
         System.out.println(System.getProperty("os.name"));
 
         // Sets Login Stage
@@ -37,7 +38,12 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+
         launch(args);
+
+        Data data = new Data();
+        data.getPrograms();
+
     }
 
 }
