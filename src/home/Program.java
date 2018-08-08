@@ -1,10 +1,10 @@
 package home;
 
 public class Program {
-    private String programCategory;
-    private String name;
+    public String programCategory;
+    public String name;
 
-    Program(String programCategory, String name){
+    public Program(String programCategory, String name){
         this.programCategory = programCategory;
         this.name = name;
     }
@@ -18,5 +18,7 @@ public class Program {
         System.out.println(this.programCategory);
         return this.programCategory;
     }
+
+    public Program(){ }
 
 }

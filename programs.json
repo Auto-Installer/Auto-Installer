@@ -1,26 +1,4 @@
 {
-  "DeveloperIdes":[
-    {
-      "name":"Visual Studio Code"
-    },
-    {
-      "name":"Sublime"
-    }
-  ],
-  "DeveloperFrameworks":[
-    {
-      "name":"ExpressJs"
-    },
-    {
-      "name":"BodyParser"
-    }
-  ],
-  "GamingApplications:":[
-    {
-      "name":"Steam"
-    },
-    {
-      "name":"Discord"
-    }
-  ]
+  "programCategory":"Gaming Applications",
+  "name":"Steam"
 }
