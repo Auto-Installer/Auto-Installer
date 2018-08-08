@@ -1,4 +1,19 @@
 {
-  "programCategory":"Gaming Applications",
-  "name":"Steam"
+  "gamingApplications":[
+    {
+      "name": "Steam"
+    },
+    {
+      "name":"Epic Games"
+    }
+  ],
+  "IDEs":[
+    {
+      "name":"Sublime"
+    },
+    {
+      "name":"Visual Studio Code"
+    }
+  ]
+
 }

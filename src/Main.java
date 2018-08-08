@@ -38,11 +38,10 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-
-        launch(args);
-
         Data data = new Data();
         data.getPrograms();
+
+        launch(args);
 
     }
 

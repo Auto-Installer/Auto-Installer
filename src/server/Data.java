@@ -1,6 +1,6 @@
 package server;
 
-import home.Program;
+import home.ProgramList;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -20,8 +20,8 @@ public class Data {
             String programsDataUrl = "./programs.json";
             File programsJson = new File(programsDataUrl);
             System.out.println("Attempting to read from file in: "+ programsJson.getCanonicalPath());
-            Program programsData = mapper.readValue(programsJson, Program.class);
-            System.out.println(programsData.name);
+            ProgramList programsData = mapper.readValue(programsJson, ProgramList.class);
+            System.out.println(programsData.getGamingApplications());
         } catch (JsonParseException e) {
             e.printStackTrace();
         }catch (JsonMappingException e) {
