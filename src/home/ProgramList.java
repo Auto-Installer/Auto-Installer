@@ -14,11 +14,9 @@ public class ProgramList<P> {
     public ProgramList(){}
 
     public P[]  getGamingApplications(){
-        System.out.println(this.gamingApplications);
         return this.gamingApplications;
     }
     public P[]  getIDEs(){
-        System.out.println(this.IDEs);
         return this.IDEs;
     }
 

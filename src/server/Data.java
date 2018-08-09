@@ -24,17 +24,32 @@ public class Data {
             ObjectMapper mapper = new ObjectMapper();
             mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
 
+            // Obj location
             String programsDataUrl = "./programs.json";
 
             File programsJson = new File(programsDataUrl);
+            // Indicates where the programs.json is being looked for
             System.out.println("Attempting to read from file in: "+ programsJson.getCanonicalPath());
 
+            // Obj that contains the programs
             ProgramList programsData = mapper.readValue(programsJson, ProgramList.class);
-            Object x = programsData.getGamingApplications()[0];
 
-            String programJSON = mapper.writeValueAsString(x);
-            Program y = mapper.readValue(programJSON, Program.class);
-            System.out.println(y.name);
+            // Gets the properties for all of the gaming applications
+            for(int i=0; programsData.gamingApplications.length > i; i++){
+                Object selectedProgram = programsData.getGamingApplications()[i];
+                String programJSON = mapper.writeValueAsString(selectedProgram);
+                Program program = mapper.readValue(programJSON, Program.class);
+                System.out.println(program.name + " " + program.version);
+            }
+
+            // Gets the properties for all of the IDE applications
+            for(int i=0; programsData.getIDEs().length > i; i++){
+                Object selectedProgram = programsData.getGamingApplications()[i];
+                String programJSON = mapper.writeValueAsString(selectedProgram);
+                Program program = mapper.readValue(programJSON, Program.class);
+                System.out.println(program.name + " " + program.version);
+            }
+
 
 
 
