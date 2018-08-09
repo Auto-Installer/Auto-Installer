@@ -1,18 +1,22 @@
 {
   "gamingApplications":[
     {
-      "name": "Steam"
+      "name": "Steam",
+      "version":1.2
     },
     {
-      "name":"Epic Games"
+      "name":"Epic Games",
+      "version":1.2
     }
   ],
   "IDEs":[
     {
-      "name":"Sublime"
+      "name":"Sublime",
+      "version":1.2
     },
     {
-      "name":"Visual Studio Code"
+      "name":"Visual Studio Code",
+      "version":1.2
     }
   ]
 

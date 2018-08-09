@@ -1,12 +1,11 @@
 package home;
-import java.lang.reflect.Array;
 
-public class ProgramList {
-    public Object gamingApplications;
-    public Object IDEs;
+public class ProgramList<P> {
+    public P[] gamingApplications;
+    public P[]  IDEs;
 
     // Constructor
-    public ProgramList(Object gamingApplications,Object IDEs){
+    public ProgramList(P[]  gamingApplications,P[]  IDEs){
         this.gamingApplications = gamingApplications;
         this.IDEs = IDEs;
     }
@@ -14,11 +13,11 @@ public class ProgramList {
     // Dummy Constructor for Jackson, idk why this works lol
     public ProgramList(){}
 
-    public Object getGamingApplications(){
+    public P[]  getGamingApplications(){
         System.out.println(this.gamingApplications);
         return this.gamingApplications;
     }
-    public Object getIDEs(){
+    public P[]  getIDEs(){
         System.out.println(this.IDEs);
         return this.IDEs;
     }
