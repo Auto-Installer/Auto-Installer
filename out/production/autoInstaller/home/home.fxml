@@ -13,7 +13,7 @@
          <children>
             <Pane layoutX="259.0" prefHeight="72.0" prefWidth="1021.0" style="-fx-background-color: #17946e;">
                <children>
-                  <Text fill="WHITE" layoutX="455.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Null" textAlignment="CENTER" wrappingWidth="114.13671875">
+                  <Text fill="WHITE" layoutX="341.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auto-Installer" textAlignment="CENTER" wrappingWidth="338.13671875">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -22,11 +22,6 @@
             </Pane>
             <Pane fx:id="programSelectionDisplay" layoutX="259.0" layoutY="72.0" prefHeight="732.0" prefWidth="1021.0">
                <children>
-                  <CheckBox layoutX="56.0" layoutY="54.0" mnemonicParsing="false" text="CheckBox">
-                     <font>
-                        <Font size="28.0" />
-                     </font>
-                  </CheckBox>
                   <Button layoutX="431.0" layoutY="670.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="160.0" style="-fx-background-color: #1aaa7f;" text="INSTALL" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="21.0" />

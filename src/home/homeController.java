@@ -35,21 +35,32 @@ public class homeController {
 
             //Gets the properties for all of the gaming applications
             for (int i = 0; programsData.gamingApplications.length > i; i++) {
+                var softwareNodeX = i * 200;
+                var softwareNodeY = i * 200;
+
                 Object selectedProgram = programsData.getGamingApplications()[i];
                 String programJSON = mapper.writeValueAsString(selectedProgram);
                 Program program = mapper.readValue(programJSON, Program.class);
+                var softwareNode = new Button((program.name).toString());
+                softwareNode.getStyleClass().add(SOFTWARE_CLASS);
+                softwareNode.relocate(softwareNodeX, softwareNodeY);
+                programSelectionDisplay.getChildren().addAll(softwareNode);
                 programSelectionDisplay.getChildren().add(new Button((program.name).toString()));
                 System.out.println(program.name + " " + program.version);
             }
 
             // Gets the properties for all of the IDE applications
             for (int i = 0; programsData.IDEs.length > i; i++) {
+                var softwareNodeX = i * 100;
+                var softwareNodeY = i * 100;
+
                 Object selectedProgram = programsData.getIDEs()[i];
                 String programJSON = mapper.writeValueAsString(selectedProgram);
                 Program program = mapper.readValue(programJSON, Program.class);
                 var softwareNode = new Button((program.name).toString());
                 softwareNode.getStyleClass().add(SOFTWARE_CLASS);
-                programSelectionDisplay.getChildren().add(softwareNode);
+                softwareNode.relocate(softwareNodeX, softwareNodeY);
+                programSelectionDisplay.getChildren().addAll(softwareNode);
                 System.out.println(program.name + " " + program.version);
             }
         }
