@@ -38,8 +38,6 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        Data data = new Data();
-        data.getPrograms();
 
         launch(args);
 

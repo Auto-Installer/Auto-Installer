@@ -7,19 +7,17 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
-
 import java.io.File;
 import java.io.IOException;
-
-
 
 
 public class Data {
     public Data(){}
 
-    public static String getPrograms(){
-        //map json to program
+    public static ProgramList getPrograms(){
+
+        ProgramList programsData = null;
+        //map json to program\
         try{
             ObjectMapper mapper = new ObjectMapper();
             mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
@@ -32,26 +30,25 @@ public class Data {
             System.out.println("Attempting to read from file in: "+ programsJson.getCanonicalPath());
 
             // Obj that contains the programs
-            ProgramList programsData = mapper.readValue(programsJson, ProgramList.class);
+            programsData = mapper.readValue(programsJson, ProgramList.class);
 
             // Gets the properties for all of the gaming applications
-            for(int i=0; programsData.gamingApplications.length > i; i++){
-                Object selectedProgram = programsData.getGamingApplications()[i];
-                String programJSON = mapper.writeValueAsString(selectedProgram);
-                Program program = mapper.readValue(programJSON, Program.class);
-                System.out.println(program.name + " " + program.version);
-            }
-
-            // Gets the properties for all of the IDE applications
-            for(int i=0; programsData.getIDEs().length > i; i++){
-                Object selectedProgram = programsData.getGamingApplications()[i];
-                String programJSON = mapper.writeValueAsString(selectedProgram);
-                Program program = mapper.readValue(programJSON, Program.class);
-                System.out.println(program.name + " " + program.version);
-            }
-
-
-
+//            for(int i=0; programsData.gamingApplications.length > i; i++){
+//
+//                Object selectedProgram = programsData.getGamingApplications()[i];
+//                String programJSON = mapper.writeValueAsString(selectedProgram);
+//                Program program = mapper.readValue(programJSON, Program.class);
+//
+//                System.out.println(program.name + " " + program.version);
+//            }
+//
+//            // Gets the properties for all of the IDE applications
+//            for(int i=0; programsData.IDEs.length > i; i++){
+//                Object selectedProgram = programsData.getIDEs()[i];
+//                String programJSON = mapper.writeValueAsString(selectedProgram);
+//                Program program = mapper.readValue(programJSON, Program.class);
+//                System.out.println(program.name + " " + program.version);
+//            }
 
         }
         catch (JsonParseException e) {
@@ -64,7 +61,7 @@ public class Data {
             e.printStackTrace();
         }
 
-        return "works";
+        return programsData;
     }
 
 }
