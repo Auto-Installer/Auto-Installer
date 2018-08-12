@@ -16,8 +16,11 @@ import java.io.File;
 import java.io.IOException;
 
 
+
 public class homeController {
     @FXML Pane programSelectionDisplay;
+    private static final String SOFTWARE_CLASS = "software" ;
+
 
 
     //home.ProgramList programs  = getPrograms();
@@ -32,7 +35,6 @@ public class homeController {
 
             //Gets the properties for all of the gaming applications
             for (int i = 0; programsData.gamingApplications.length > i; i++) {
-
                 Object selectedProgram = programsData.getGamingApplications()[i];
                 String programJSON = mapper.writeValueAsString(selectedProgram);
                 Program program = mapper.readValue(programJSON, Program.class);
@@ -45,7 +47,9 @@ public class homeController {
                 Object selectedProgram = programsData.getIDEs()[i];
                 String programJSON = mapper.writeValueAsString(selectedProgram);
                 Program program = mapper.readValue(programJSON, Program.class);
-                programSelectionDisplay.getChildren().add(new Button((program.name).toString()));
+                var softwareNode = new Button((program.name).toString());
+                softwareNode.getStyleClass().add(SOFTWARE_CLASS);
+                programSelectionDisplay.getChildren().add(softwareNode);
                 System.out.println(program.name + " " + program.version);
             }
         }

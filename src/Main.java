@@ -24,6 +24,7 @@ public class Main extends Application {
         FXMLLoader homePaneLoader = new FXMLLoader(getClass().getResource("./home/home.fxml"));
         Parent homePane = homePaneLoader.load();
         Scene homeScene = new Scene(homePane, 1280, 800);
+        homeScene.getStylesheets().add("./styles/home.css");
 
         // injecting home scene into the controller of the login scene
         loginController loginPaneController = loginPaneLoader.getController();
