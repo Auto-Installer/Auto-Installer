@@ -20,28 +20,23 @@ import java.io.IOException;
 
 
 public class homeController {
+    Data data = new Data();
+    GridPane softwareDisplay = new GridPane();
+
     @FXML Pane programSelectionDisplay;
 
-    @FXML
-    protected void initialize() {
+    private String selectedSoftwareCatergory = "DeveloperIDEs";
+
+    private void displayDeveloperIDEs(){
+        softwareDisplay.getChildren().clear();
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
-        Data data = new Data();
-
-        // Setting up where the software will be displayed
-        GridPane softwareDisplay = new GridPane();
-
-        programSelectionDisplay.getChildren().addAll(softwareDisplay);
-
-
 
         var programsData = data.getPrograms();
-        try {
 
-            //Gets the properties for all of the gaming applications
+        //Gets the properties for all of the gaming applications
+        try{
             for (int i = 0; programsData.gamingApplications.length > i; i++) {
-                //i = 10;
-
                 Object selectedProgram = programsData.getGamingApplications()[i];
                 String programJSON = mapper.writeValueAsString(selectedProgram);
                 Program program = mapper.readValue(programJSON, Program.class);
@@ -50,19 +45,7 @@ public class homeController {
                 //programSelectionDisplay.getChildren().addAll(softwareNode);
                 System.out.println(program.name + " " + program.version);
             }
-
-            // Gets the properties for all of the IDE applications
-//            for (int i = 0; programsData.IDEs.length > i; i++) {
-//                //i = 10;
-//                Object selectedProgram = programsData.getIDEs()[i];
-//                String programJSON = mapper.writeValueAsString(selectedProgram);
-//                Program program = mapper.readValue(programJSON, Program.class);
-//                var softwareNode = new Button((program.name).toString());
-//                softwareDisplay.add(softwareNode, 1, 0); // column, row
-//                System.out.println(program.name + " " + program.version);
-//            }
-        }
-        catch (JsonParseException e) {
+        }catch (JsonParseException e) {
             e.printStackTrace();
         }
         catch (JsonMappingException e) {
@@ -73,12 +56,64 @@ public class homeController {
         }
     }
 
+    private void displayGamingApplications() {
 
+        softwareDisplay.getChildren().clear();
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
 
+        var programsData = data.getPrograms();
+        try {
+            //Gets the properties for all of the IDE applications
+            for (int i = 0; programsData.IDEs.length > i; i++) {
+                //i = 10;
+                Object selectedProgram = programsData.getIDEs()[i];
+                String programJSON = mapper.writeValueAsString(selectedProgram);
+                Program program = mapper.readValue(programJSON, Program.class);
+                var softwareNode = new Button((program.name).toString());
+                softwareDisplay.add(softwareNode, i, i); // column, row
+                System.out.println(program.name + " " + program.version);
+            }
 
+        }catch (JsonParseException e) {
+            e.printStackTrace();
+        }
+        catch (JsonMappingException e) {
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
+    @FXML public void selectedDeveloperIDEs(){
+        selectedSoftwareCatergory = "DeveloperIDEs";
+        System.out.println("hello");
+        displayDeveloperIDEs();
+    }
 
+    @FXML public void selectedGamingApplications(){
+        selectedSoftwareCatergory = "GamingApplications";
+        System.out.println("hello");
+        displayGamingApplications();
+    }
 
+    @FXML
+    protected void initialize() {
+        Data data = new Data();
+        // Setting up where the software will be displayed
+        programSelectionDisplay.getChildren().addAll(softwareDisplay);
 
+        // Contains the JSON data for the programs
+        var programsData = data.getPrograms();
+
+            if (selectedSoftwareCatergory == "DeveloperIDEs") {
+                displayDeveloperIDEs();
+            }
+            else if(selectedSoftwareCatergory == "GamingApplications") {
+                displayGamingApplications();
+            }
+
+    }
 
 }

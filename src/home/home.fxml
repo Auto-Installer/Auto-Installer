@@ -35,7 +35,7 @@
          </children></Pane>
       <Pane prefHeight="800.0" prefWidth="261.0" style="-fx-background-color: #1DC08F; -fx-border-image-width: 0 1 0 1;">
          <children>
-            <ListView prefHeight="36.0" prefWidth="261.0" style="-fx-border-color: #17946e; -fx-border-width: 0 0 1 0; -fx-background-color: #1aaa7f;">
+            <ListView onMouseClicked="#selectedDeveloperIDEs" prefHeight="36.0" prefWidth="261.0" style="-fx-border-color: #17946e; -fx-border-width: 0 0 1 0; -fx-background-color: #1aaa7f;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -45,12 +45,12 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ListView>
-            <ListView layoutY="72.0" prefHeight="36.0" prefWidth="261.0" style="-fx-border-color: #17946e; -fx-border-width: 0 0 1 0; -fx-background-color: #1aaa7f;">
+            <ListView onMouseClicked="#selectedGamingApplications" layoutY="72.0" prefHeight="36.0" prefWidth="261.0" style="-fx-border-color: #17946e; -fx-border-width: 0 0 1 0; -fx-background-color: #1aaa7f;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ListView>
-            <Text fill="WHITE" layoutX="50.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 500;" text="Developer IDEs" textAlignment="CENTER" wrappingWidth="160.13671875">
+            <Text  onMouseClicked="#selectedDeveloperIDEs" fill="WHITE" layoutX="50.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 500;" text="Developer IDEs" textAlignment="CENTER" wrappingWidth="160.13671875">
                <font>
                   <Font size="20.0" />
                </font>
@@ -66,7 +66,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Text>
-            <Text fill="WHITE" layoutX="37.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 500;" text="Gaming Applications" textAlignment="CENTER" wrappingWidth="186.13671875">
+            <Text onMouseClicked="#selectedGamingApplications" fill="WHITE" layoutX="37.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 500;" text="Gaming Applications" textAlignment="CENTER" wrappingWidth="186.13671875">
                <font>
                   <Font size="19.0" />
                </font>

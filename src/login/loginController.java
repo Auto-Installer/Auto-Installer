@@ -15,7 +15,6 @@ import java.awt.*;
 public class loginController {
     @FXML TextField usernameInput;
     @FXML PasswordField passwordInput;
-    @FXML Pane skipLoginButton;
 
     private Scene homeScene;
 
