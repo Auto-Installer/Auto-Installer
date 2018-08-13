@@ -17,6 +17,14 @@
     {
       "name":"Visual Studio Code",
       "version":1.2
+    },
+    {
+      "name":"Eclipse",
+      "version":1.2
+    },
+    {
+      "name": "IntelliJ",
+      "version": 1.2
     }
   ]
 

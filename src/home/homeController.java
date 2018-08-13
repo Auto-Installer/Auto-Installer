@@ -25,9 +25,11 @@ public class homeController {
 
     @FXML Pane programSelectionDisplay;
 
-    private String selectedSoftwareCatergory = "DeveloperIDEs";
+    private String selectedSoftwareCategory = "DeveloperIDEs";
 
-    private void displayDeveloperIDEs(){
+    private void displayGamingApplications(){
+        var gridX = 0;
+        var gridY = 0;
         softwareDisplay.getChildren().clear();
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
@@ -37,12 +39,24 @@ public class homeController {
         //Gets the properties for all of the gaming applications
         try{
             for (int i = 0; programsData.gamingApplications.length > i; i++) {
+
                 Object selectedProgram = programsData.getGamingApplications()[i];
                 String programJSON = mapper.writeValueAsString(selectedProgram);
                 Program program = mapper.readValue(programJSON, Program.class);
+
                 var softwareNode = new Button((program.name).toString());
-                softwareDisplay.add(softwareNode, i, i); // column, row
-                //programSelectionDisplay.getChildren().addAll(softwareNode);
+                // Determines in which cell the software will be displayed in
+                if(gridX < 3){
+                    gridX++;
+
+                }else{
+                    gridX = 0;
+                    gridY++;
+                }
+
+                System.out.println(gridX + " " + gridY);
+                softwareDisplay.add(softwareNode, gridX, gridY); // column, row
+
                 System.out.println(program.name + " " + program.version);
             }
         }catch (JsonParseException e) {
@@ -56,7 +70,10 @@ public class homeController {
         }
     }
 
-    private void displayGamingApplications() {
+    private void displayDeveloperIDEs() {
+
+        var gridX = -1;
+        var gridY = 0;
 
         softwareDisplay.getChildren().clear();
         ObjectMapper mapper = new ObjectMapper();
@@ -66,13 +83,26 @@ public class homeController {
         try {
             //Gets the properties for all of the IDE applications
             for (int i = 0; programsData.IDEs.length > i; i++) {
-                //i = 10;
+
                 Object selectedProgram = programsData.getIDEs()[i];
                 String programJSON = mapper.writeValueAsString(selectedProgram);
                 Program program = mapper.readValue(programJSON, Program.class);
+
                 var softwareNode = new Button((program.name).toString());
-                softwareDisplay.add(softwareNode, i, i); // column, row
-                System.out.println(program.name + " " + program.version);
+                // Determines in which cell the software will be displayed in
+
+                if(gridX < 2){
+                    gridX++;
+
+                }else{
+                    gridX = 0;
+                    gridY++;
+                }
+
+                softwareDisplay.add(softwareNode, gridX, gridY); // column, row
+                System.out.println(program.name + " " + program.version + " coordinates: (" + gridX + "," + gridY + ")");
+
+
             }
 
         }catch (JsonParseException e) {
@@ -87,13 +117,13 @@ public class homeController {
     }
 
     @FXML public void selectedDeveloperIDEs(){
-        selectedSoftwareCatergory = "DeveloperIDEs";
+        selectedSoftwareCategory = "DeveloperIDEs";
         System.out.println("hello");
         displayDeveloperIDEs();
     }
 
     @FXML public void selectedGamingApplications(){
-        selectedSoftwareCatergory = "GamingApplications";
+        selectedSoftwareCategory = "GamingApplications";
         System.out.println("hello");
         displayGamingApplications();
     }
@@ -107,10 +137,10 @@ public class homeController {
         // Contains the JSON data for the programs
         var programsData = data.getPrograms();
 
-            if (selectedSoftwareCatergory == "DeveloperIDEs") {
+            if (selectedSoftwareCategory == "DeveloperIDEs") {
                 displayDeveloperIDEs();
             }
-            else if(selectedSoftwareCatergory == "GamingApplications") {
+            else if(selectedSoftwareCategory == "GamingApplications") {
                 displayGamingApplications();
             }
 

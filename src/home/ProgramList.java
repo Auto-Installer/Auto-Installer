@@ -2,7 +2,7 @@ package home;
 
 public class ProgramList<P> {
     public P[] gamingApplications;
-    public P[]  IDEs;
+    public P[] IDEs;
     public P notDefined;
 
     // Constructor
