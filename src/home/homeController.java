@@ -1,5 +1,7 @@
 package home;
 import javafx.scene.control.Button;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
 import server.Data;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
@@ -19,50 +21,46 @@ import java.io.IOException;
 
 public class homeController {
     @FXML Pane programSelectionDisplay;
-    private static final String SOFTWARE_CLASS = "software" ;
 
-
-
-    //home.ProgramList programs  = getPrograms();
     @FXML
     protected void initialize() {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
         Data data = new Data();
 
+        // Setting up where the software will be displayed
+        GridPane softwareDisplay = new GridPane();
+
+        programSelectionDisplay.getChildren().addAll(softwareDisplay);
+
+
+
         var programsData = data.getPrograms();
         try {
 
             //Gets the properties for all of the gaming applications
             for (int i = 0; programsData.gamingApplications.length > i; i++) {
-                var softwareNodeX = i * 200;
-                var softwareNodeY = i * 200;
+                //i = 10;
 
                 Object selectedProgram = programsData.getGamingApplications()[i];
                 String programJSON = mapper.writeValueAsString(selectedProgram);
                 Program program = mapper.readValue(programJSON, Program.class);
                 var softwareNode = new Button((program.name).toString());
-                softwareNode.getStyleClass().add(SOFTWARE_CLASS);
-                softwareNode.relocate(softwareNodeX, softwareNodeY);
-                programSelectionDisplay.getChildren().addAll(softwareNode);
-                programSelectionDisplay.getChildren().add(new Button((program.name).toString()));
+                softwareDisplay.add(softwareNode, i, i); // column, row
+                //programSelectionDisplay.getChildren().addAll(softwareNode);
                 System.out.println(program.name + " " + program.version);
             }
 
             // Gets the properties for all of the IDE applications
-            for (int i = 0; programsData.IDEs.length > i; i++) {
-                var softwareNodeX = i * 100;
-                var softwareNodeY = i * 100;
-
-                Object selectedProgram = programsData.getIDEs()[i];
-                String programJSON = mapper.writeValueAsString(selectedProgram);
-                Program program = mapper.readValue(programJSON, Program.class);
-                var softwareNode = new Button((program.name).toString());
-                softwareNode.getStyleClass().add(SOFTWARE_CLASS);
-                softwareNode.relocate(softwareNodeX, softwareNodeY);
-                programSelectionDisplay.getChildren().addAll(softwareNode);
-                System.out.println(program.name + " " + program.version);
-            }
+//            for (int i = 0; programsData.IDEs.length > i; i++) {
+//                //i = 10;
+//                Object selectedProgram = programsData.getIDEs()[i];
+//                String programJSON = mapper.writeValueAsString(selectedProgram);
+//                Program program = mapper.readValue(programJSON, Program.class);
+//                var softwareNode = new Button((program.name).toString());
+//                softwareDisplay.add(softwareNode, 1, 0); // column, row
+//                System.out.println(program.name + " " + program.version);
+//            }
         }
         catch (JsonParseException e) {
             e.printStackTrace();
