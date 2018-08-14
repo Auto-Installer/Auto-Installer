@@ -1,5 +1,8 @@
 package server;
 
+
+import com.dropbox.core.v2.files.ListFolderResult;
+import com.dropbox.core.v2.files.Metadata;
 import home.ProgramList;
 
 import com.fasterxml.jackson.core.JsonParseException;
@@ -7,12 +10,37 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import com.dropbox.core.DbxException;
+import com.dropbox.core.DbxRequestConfig;
+import com.dropbox.core.v2.DbxClientV2;
+import com.dropbox.core.v2.users.FullAccount;
+
 import java.io.File;
 import java.io.IOException;
 
 
 public class Data {
+    private static final String ACCESS_TOKEN = "OV9fcRvWwDAAAAAAAAAAPWerB1JilPqKxpqXUzY6LEbloEE4e_KuWSelSJ1-4pcd";
+    // Create Dropbox client
+    DbxRequestConfig config = DbxRequestConfig.newBuilder("dropbox/java-tutorial").build();
+    DbxClientV2 client = new DbxClientV2(config, ACCESS_TOKEN);
+
     public Data(){}
+
+
+    public void getDropboxInfo(){
+        try {
+            FullAccount account = client.users().getCurrentAccount();
+            System.out.println(account.getName().getDisplayName());
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+
+    public void getDropboxFile(String path) throws DbxException, IOException{
+        ListFolderResult result = client.files().listFolder(path);
+        System.out.println(result);
+    }
 
     public static ProgramList getPrograms(){
 
