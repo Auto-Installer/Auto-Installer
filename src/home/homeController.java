@@ -1,5 +1,7 @@
 package home;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import server.Data;
@@ -16,12 +18,16 @@ import server.Program;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 
 public class homeController {
     Data data = new Data();
     GridPane softwareDisplay = new GridPane();
+
+    List softwareToBeInstalled =  new ArrayList();
 
     @FXML Pane programSelectionDisplay;
 
@@ -44,7 +50,16 @@ public class homeController {
                 String programJSON = mapper.writeValueAsString(selectedProgram);
                 Program program = mapper.readValue(programJSON, Program.class);
 
+                // Handles what will occur when the software is clicked
                 var softwareNode = new Button((program.name).toString());
+                softwareNode.setOnMousePressed(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        softwareToBeInstalled.add(program.name);
+                        System.out.println(program.name);
+                    }
+                });
+
                 // Determines in which cell the software will be displayed in
                 if(gridX < 3){
                     gridX++;
@@ -89,6 +104,16 @@ public class homeController {
                 Program program = mapper.readValue(programJSON, Program.class);
 
                 var softwareNode = new Button((program.name).toString());
+
+                // Handles what will occur when the software is clicked
+                softwareNode.setOnMousePressed(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        softwareToBeInstalled.add(program.name);
+                        System.out.println(program.name);
+                    }
+                });
+
                 // Determines in which cell the software will be displayed in
 
                 if(gridX < 2){
@@ -101,7 +126,6 @@ public class homeController {
 
                 softwareDisplay.add(softwareNode, gridX, gridY); // column, row
                 System.out.println(program.name + " " + program.version + " coordinates: (" + gridX + "," + gridY + ")");
-
 
             }
 
@@ -116,15 +140,17 @@ public class homeController {
         }
     }
 
+    public void installSoftwares(){
+        System.out.println(softwareToBeInstalled);
+    }
+
     @FXML public void selectedDeveloperIDEs(){
         selectedSoftwareCategory = "DeveloperIDEs";
-        System.out.println("hello");
         displayDeveloperIDEs();
     }
 
     @FXML public void selectedGamingApplications(){
         selectedSoftwareCategory = "GamingApplications";
-        System.out.println("hello");
         displayGamingApplications();
     }
 

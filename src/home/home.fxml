@@ -20,9 +20,10 @@
                   </Text>
                </children>
             </Pane>
-            <Pane fx:id="programSelectionDisplay" layoutX="259.0" layoutY="72.0" prefHeight="732.0" prefWidth="1021.0">
+            <Pane fx:id="programSelectionDisplay" layoutX="259.0" layoutY="72.0" prefHeight="650.0" prefWidth="1021.0" />
+            <Pane layoutX="259.0" layoutY="722.0" prefHeight="79.0" prefWidth="1021.0" style="-fx-background-color: #DCDCDC;">
                <children>
-                  <Button layoutX="431.0" layoutY="670.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="160.0" style="-fx-background-color: #1aaa7f;" text="INSTALL" textAlignment="CENTER" textFill="WHITE">
+                  <Button onMouseClicked="#installSoftwares" layoutX="431.0" layoutY="16.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="160.0" style="-fx-background-color: #1aaa7f;" text="INSTALL" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="21.0" />
                      </font>
@@ -45,12 +46,12 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ListView>
-            <ListView onMouseClicked="#selectedGamingApplications" layoutY="72.0" prefHeight="36.0" prefWidth="261.0" style="-fx-border-color: #17946e; -fx-border-width: 0 0 1 0; -fx-background-color: #1aaa7f;">
+            <ListView layoutY="72.0" onMouseClicked="#selectedGamingApplications" prefHeight="36.0" prefWidth="261.0" style="-fx-border-color: #17946e; -fx-border-width: 0 0 1 0; -fx-background-color: #1aaa7f;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ListView>
-            <Text  onMouseClicked="#selectedDeveloperIDEs" fill="WHITE" layoutX="50.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 500;" text="Developer IDEs" textAlignment="CENTER" wrappingWidth="160.13671875">
+            <Text fill="WHITE" layoutX="50.0" layoutY="26.0" onMouseClicked="#selectedDeveloperIDEs" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 500;" text="Developer IDEs" textAlignment="CENTER" wrappingWidth="160.13671875">
                <font>
                   <Font size="20.0" />
                </font>
@@ -66,7 +67,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Text>
-            <Text onMouseClicked="#selectedGamingApplications" fill="WHITE" layoutX="37.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 500;" text="Gaming Applications" textAlignment="CENTER" wrappingWidth="186.13671875">
+            <Text fill="WHITE" layoutX="37.0" layoutY="97.0" onMouseClicked="#selectedGamingApplications" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 500;" text="Gaming Applications" textAlignment="CENTER" wrappingWidth="186.13671875">
                <font>
                   <Font size="19.0" />
                </font>
