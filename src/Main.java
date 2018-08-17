@@ -43,7 +43,7 @@ public class Main extends Application {
 
     public static void main(String[] args) throws DbxException, IOException {
         Data data = new Data();
-        data.getDropboxFile("./");
+        data.getDropboxFile("/Software");
         launch(args);
 
     }
