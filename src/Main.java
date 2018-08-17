@@ -43,7 +43,7 @@ public class Main extends Application {
 
     public static void main(String[] args) throws DbxException, IOException {
         Data data = new Data();
-        data.getDropboxFile("/Software");
+        data.getDropboxFile("/Software/IDEs/VSCode-win32-x64-1.26.0.zip");
         launch(args);
 
     }

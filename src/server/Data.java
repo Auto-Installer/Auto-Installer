@@ -1,6 +1,8 @@
 package server;
 
 
+import com.dropbox.core.DbxDownloader;
+import com.dropbox.core.v2.files.FileMetadata;
 import com.dropbox.core.v2.files.ListFolderResult;
 import com.dropbox.core.v2.files.Metadata;
 import home.ProgramList;
@@ -19,6 +21,7 @@ import com.dropbox.core.v2.team.UserSelectorArg;
 
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 
@@ -33,20 +36,16 @@ public class Data {
     public Data(){}
 
 
-    public void getDropboxFile(String path) throws DbxException {
+    public void getDropboxFile(String path) throws DbxException, IOException {
 
-        // Get files and folder metadata from Dropbox root directory
-        ListFolderResult result = client.files().listFolder(path);
-        while (true) {
-            for (Metadata metadata : result.getEntries()) {
-                System.out.println(metadata.getPathLower());
-            }
+        DbxDownloader<FileMetadata> downloader = client.files().download(path);
 
-            if (!result.getHasMore()) {
-                break;
-            }
-
-            result = client.files().listFolderContinue(result.getCursor());
+        try {
+            FileOutputStream out = new FileOutputStream("VsCode.zip");
+            downloader.download(out);
+            out.close();
+        } catch (DbxException ex) {
+            System.out.println(ex.getMessage());
         }
 
     }
