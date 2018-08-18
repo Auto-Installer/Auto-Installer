@@ -2,10 +2,12 @@ package server;
 
 public class  Program  {
     public Object name;
+    public Object category;
     public Object version;
 
-    Program(Object name, Object version){
+    Program(Object name,Object category, Object version){
         this.name = name;
+        this.category = category;
         this.version =  version;
     }
 

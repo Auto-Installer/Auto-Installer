@@ -1,10 +1,7 @@
 package server;
 
-
 import com.dropbox.core.DbxDownloader;
 import com.dropbox.core.v2.files.FileMetadata;
-import com.dropbox.core.v2.files.ListFolderResult;
-import com.dropbox.core.v2.files.Metadata;
 import home.ProgramList;
 
 import com.fasterxml.jackson.core.JsonParseException;
@@ -15,35 +12,51 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.dropbox.core.DbxException;
 import com.dropbox.core.DbxRequestConfig;
 import com.dropbox.core.v2.DbxClientV2;
-import com.dropbox.core.v2.team.UserSelectorArg;
-
-
 
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-
 public class Data {
+
     private static final String ACCESS_TOKEN = "Ga6TgeGiiUAAAAAAAAAAghSFY_3xsNKD3u8UKUR4D-DYoSsSjFfoecn1rvrimVnK";
-    // Create Dropbox client
-    DbxRequestConfig config = DbxRequestConfig.newBuilder("dropbox/java-tutorial").build();
-    DbxClientV2 client = new DbxClientV2(config, ACCESS_TOKEN);
-
-
+    private DbxRequestConfig config = DbxRequestConfig.newBuilder("dropbox/java-tutorial").build();
+    private DbxClientV2 client = new DbxClientV2(config, ACCESS_TOKEN);
+    private UnzipUtility unzipUtility = new UnzipUtility();
 
     public Data(){}
 
+    public void getDropboxFile(String name, String category, String fileType) throws DbxException, IOException {
 
-    public void getDropboxFile(String path) throws DbxException, IOException {
+        String home = System.getProperty("user.home");
+        String root = "C:\\";
+        String ProgramFiles = root + "Program Files/";
 
-        DbxDownloader<FileMetadata> downloader = client.files().download(path);
+        // Location in dropbox where the software is located
+        String dropboxPath = "/Software/" + category + "/" + name + fileType;
+        // Download location
+        String zipPath = ProgramFiles + name + fileType;
+
+        DbxDownloader<FileMetadata> downloader = client.files().download(dropboxPath);
 
         try {
-            FileOutputStream out = new FileOutputStream("VsCode.zip");
+            System.out.println("Installing " + name + "...");
+            String downloadPath = ProgramFiles + name;
+            FileOutputStream out = new FileOutputStream( ProgramFiles + name + fileType);
             downloader.download(out);
             out.close();
+
+            System.out.println("Installed .zip for " + name);
+
+            new File(downloadPath).mkdirs();
+
+            System.out.println("Created folder for " + name + ", beginning to unzip the installed .zip");
+
+            unzipUtility.unzip(zipPath, downloadPath);
+
+            System.out.println("Successfully installed " + name);
+
         } catch (DbxException ex) {
             System.out.println(ex.getMessage());
         }
@@ -53,7 +66,7 @@ public class Data {
     public static ProgramList getPrograms(){
 
         ProgramList programsData = null;
-        //map json to program\
+
         try{
             ObjectMapper mapper = new ObjectMapper();
             mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
@@ -68,23 +81,6 @@ public class Data {
             // Obj that contains the programs
             programsData = mapper.readValue(programsJson, ProgramList.class);
 
-            // Gets the properties for all of the gaming applications
-//            for(int i=0; programsData.gamingApplications.length > i; i++){
-//
-//                Object selectedProgram = programsData.getGamingApplications()[i];
-//                String programJSON = mapper.writeValueAsString(selectedProgram);
-//                Program program = mapper.readValue(programJSON, Program.class);
-//
-//                System.out.println(program.name + " " + program.version);
-//            }
-//
-//            // Gets the properties for all of the IDE applications
-//            for(int i=0; programsData.IDEs.length > i; i++){
-//                Object selectedProgram = programsData.getIDEs()[i];
-//                String programJSON = mapper.writeValueAsString(selectedProgram);
-//                Program program = mapper.readValue(programJSON, Program.class);
-//                System.out.println(program.name + " " + program.version);
-//            }
 
         }
         catch (JsonParseException e) {

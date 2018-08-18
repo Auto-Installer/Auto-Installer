@@ -1,4 +1,6 @@
 package home;
+import com.dropbox.core.DbxException;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
@@ -24,10 +26,13 @@ import java.util.List;
 
 
 public class homeController {
-    Data data = new Data();
-    GridPane softwareDisplay = new GridPane();
+    private Data data = new Data();
 
-    List softwareToBeInstalled =  new ArrayList();
+    private GridPane softwareDisplay = new GridPane();
+
+    private List softwareToBeInstalled =  new ArrayList();
+
+    private ObjectMapper mapper = new ObjectMapper();
 
     @FXML Pane programSelectionDisplay;
 
@@ -37,7 +42,7 @@ public class homeController {
         var gridX = 0;
         var gridY = 0;
         softwareDisplay.getChildren().clear();
-        ObjectMapper mapper = new ObjectMapper();
+
         mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
 
         var programsData = data.getPrograms();
@@ -52,11 +57,12 @@ public class homeController {
 
                 // Handles what will occur when the software is clicked
                 var softwareNode = new Button((program.name).toString());
+
                 softwareNode.setOnMousePressed(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
-                        softwareToBeInstalled.add(program.name);
-                        System.out.println(program.name);
+                        softwareToBeInstalled.add(program);
+                        System.out.println(program);
                     }
                 });
 
@@ -107,15 +113,15 @@ public class homeController {
 
                 // Handles what will occur when the software is clicked
                 softwareNode.setOnMousePressed(new EventHandler<MouseEvent>() {
+
                     @Override
                     public void handle(MouseEvent event) {
-                        softwareToBeInstalled.add(program.name);
-                        System.out.println(program.name);
+                        softwareToBeInstalled.add(program);
+                        System.out.println(program);
                     }
                 });
 
                 // Determines in which cell the software will be displayed in
-
                 if(gridX < 2){
                     gridX++;
 
@@ -140,9 +146,15 @@ public class homeController {
         }
     }
 
-    public void installSoftwares(){
-
+    public void installSoftwares() throws JsonProcessingException, IOException, DbxException {
         System.out.println(softwareToBeInstalled);
+        for(int i=0; i < softwareToBeInstalled.size(); i++ ){
+            Object selectedProgram = softwareToBeInstalled.get(i);
+            String programJSON = mapper.writeValueAsString(selectedProgram);
+            Program program = mapper.readValue(programJSON, Program.class);
+
+            data.getDropboxFile((program.name).toString(), (program.category).toString(), ".zip");
+        }
     }
 
     @FXML public void selectedDeveloperIDEs(){
