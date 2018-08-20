@@ -53,7 +53,7 @@ public class Data {
 
             System.out.println("Created folder for " + name + ", beginning to unzip the installed .zip");
 
-            unzipUtility.unzip(zipPath, downloadPath);
+            unzipUtility.extractFolder(zipPath, downloadPath);
 
             System.out.println("Successfully installed " + name);
 
@@ -80,7 +80,6 @@ public class Data {
 
             // Obj that contains the programs
             programsData = mapper.readValue(programsJson, ProgramList.class);
-
 
         }
         catch (JsonParseException e) {
