@@ -34,6 +34,24 @@ public class homeController {
 
     private ObjectMapper mapper = new ObjectMapper();
 
+    private String softwareBoxFXML = "<children>\n" +
+            "                  <Pane layoutX=\"37.0\" layoutY=\"26.0\" prefHeight=\"188.0\" prefWidth=\"186.0\" style=\"-fx-background-color: #071756; -fx-background-radius: 10px;\">\n" +
+            "                     <children>\n" +
+            "                        <Button layoutX=\"36.0\" layoutY=\"143.0\" mnemonicParsing=\"false\" prefHeight=\"37.0\" prefWidth=\"115.0\" style=\"-fx-background-color: #229b24;\" text=\"Select\" textFill=\"WHITE\">\n" +
+            "                           <font>\n" +
+            "                              <Font size=\"16.0\" />\n" +
+            "                           </font>\n" +
+            "                        </Button>\n" +
+            "                        <Pane layoutX=\"44.0\" layoutY=\"37.0\" prefHeight=\"79.0\" prefWidth=\"80.0\" style=\"-fx-background-color: #fff; -fx-pref-width: 100; -fx-pref-height: 100;\" />\n" +
+            "                        <Text fill=\"WHITE\" layoutX=\"36.0\" layoutY=\"26.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Software Name\">\n" +
+            "                           <font>\n" +
+            "                              <Font size=\"17.0\" />\n" +
+            "                           </font>\n" +
+            "                        </Text>\n" +
+            "                     </children>\n" +
+            "                  </Pane>\n" +
+            "               </children>";
+
     @FXML Pane programSelectionDisplay;
 
     private String selectedSoftwareCategory = "DeveloperIDEs";
