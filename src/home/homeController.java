@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import server.Data;
 import javafx.fxml.FXML;
@@ -76,10 +78,29 @@ public class homeController {
                 String programJSON = mapper.writeValueAsString(selectedProgram);
                 Program program = mapper.readValue(programJSON, Program.class);
 
-                // Handles what will occur when the software is clicked
-                var softwareNode = new Button((program.name).toString());
+                Pane softwareContainer = new Pane();
+                softwareContainer.setStyle("-fx-background-color: #071756; -fx-background-radius: 10px;");
+                softwareContainer.setPrefSize(188.0,186.0);
 
-                softwareNode.setOnMousePressed(new EventHandler<MouseEvent>() {
+                Text softwareName = new Text();
+                softwareName.setFont(new Font(17.0));
+                softwareName.setText((program.name).toString());
+                softwareName.setFill(Color.WHITE);
+                softwareName.setLayoutY(26.0);
+                softwareName.setLayoutX(10.0);
+
+
+                Button selectSoftwareButton = new Button("SELECT");
+                selectSoftwareButton.setLayoutX(36.0);
+                selectSoftwareButton.setLayoutY(143.0);
+                selectSoftwareButton.setStyle("-fx-background-color: #229b24;");
+
+                softwareContainer.getChildren().addAll(selectSoftwareButton, softwareName);
+
+
+                // Handles what will occur when the software is clicked
+                selectSoftwareButton.setOnMousePressed(new EventHandler<MouseEvent>() {
+
                     @Override
                     public void handle(MouseEvent event) {
                         softwareToBeInstalled.add(program);
@@ -97,7 +118,7 @@ public class homeController {
                 }
 
                 System.out.println(gridX + " " + gridY);
-                softwareDisplay.add(softwareNode, gridX, gridY); // column, row
+                softwareDisplay.add(softwareContainer, gridX, gridY); // column, row
 
                 System.out.println(program.name + " " + program.version);
             }
@@ -132,13 +153,23 @@ public class homeController {
                 Program program = mapper.readValue(programJSON, Program.class);
 
                 Pane softwareContainer = new Pane();
-                Text softwareName = new Text();
-                softwareName.setText((program.name).toString());
                 softwareContainer.setStyle("-fx-background-color: #071756; -fx-background-radius: 10px;");
                 softwareContainer.setPrefSize(188.0,186.0);
+
+                Text softwareName = new Text();
+                softwareName.setFont(new Font(17.0));
+                softwareName.setText((program.name).toString());
+                softwareName.setFill(Color.WHITE);
+                softwareName.setLayoutY(26.0);
+                softwareName.setLayoutX(10.0);
+
+
                 Button selectSoftwareButton = new Button("SELECT");
+                selectSoftwareButton.setLayoutX(36.0);
+                selectSoftwareButton.setLayoutY(143.0);
                 selectSoftwareButton.setStyle("-fx-background-color: #229b24;");
-                softwareContainer.getChildren().addAll(selectSoftwareButton);
+
+                softwareContainer.getChildren().addAll(selectSoftwareButton, softwareName);
 
 
                 // Handles what will occur when the software is clicked

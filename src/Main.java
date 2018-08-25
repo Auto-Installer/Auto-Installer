@@ -15,7 +15,7 @@ public class Main extends Application {
 
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         // Gets the OS name
         System.out.println(System.getProperty("os.name"));
 
@@ -39,11 +39,6 @@ public class Main extends Application {
         primaryStage.setTitle("Auto-Installer");
         primaryStage.setScene(loginScene);
         primaryStage.show();
-        System.out.println("\ta\tb\tc");
-        System.out.println("\\\\");
-        System.out.println("'");
-        System.out.println("\"\"\"");
-        System.out.println("C:\nin\the downward spiral");
     }
 
 
