@@ -2,6 +2,7 @@ package home;
 import com.dropbox.core.DbxException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.ColumnConstraints;
@@ -140,6 +141,9 @@ public class homeController {
         var gridY = 0;
 
         softwareDisplay.getChildren().clear();
+        softwareDisplay.setHgap(10); //horizontal gap in pixels => that's what you are asking for
+        softwareDisplay.setVgap(10); //vertical gap in pixels
+        softwareDisplay.setPadding(new Insets(10,10,10,10)); //margins around the whole grid
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
 
@@ -183,7 +187,7 @@ public class homeController {
                 });
 
                 // Determines in which cell the software will be displayed in
-                if(gridX < 2){
+                if(gridX < 4){
                     gridX++;
 
                 }else{
