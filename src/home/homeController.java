@@ -66,6 +66,9 @@ public class homeController {
         var gridX = 0;
         var gridY = 0;
         softwareDisplay.getChildren().clear();
+        softwareDisplay.setHgap(10); //horizontal gap in pixels => that's what you are asking for
+        softwareDisplay.setVgap(10); //vertical gap in pixels
+        softwareDisplay.setPadding(new Insets(10,10,10,10)); //margins around the whole grid
 
         mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
 
@@ -110,7 +113,7 @@ public class homeController {
                 });
 
                 // Determines in which cell the software will be displayed in
-                if(gridX < 3){
+                if(gridX < 4){
                     gridX++;
 
                 }else{
