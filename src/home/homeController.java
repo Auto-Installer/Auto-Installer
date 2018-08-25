@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
 import server.Data;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
@@ -51,6 +52,8 @@ public class homeController {
             "                     </children>\n" +
             "                  </Pane>\n" +
             "               </children>";
+
+
 
     @FXML Pane programSelectionDisplay;
 
@@ -111,6 +114,7 @@ public class homeController {
 
     private void displayDeveloperIDEs() {
 
+
         var gridX = -1;
         var gridY = 0;
 
@@ -127,10 +131,18 @@ public class homeController {
                 String programJSON = mapper.writeValueAsString(selectedProgram);
                 Program program = mapper.readValue(programJSON, Program.class);
 
-                var softwareNode = new Button((program.name).toString());
+                Pane softwareContainer = new Pane();
+                Text softwareName = new Text();
+                softwareName.setText((program.name).toString());
+                softwareContainer.setStyle("-fx-background-color: #071756; -fx-background-radius: 10px;");
+                softwareContainer.setPrefSize(188.0,186.0);
+                Button selectSoftwareButton = new Button("SELECT");
+                selectSoftwareButton.setStyle("-fx-background-color: #229b24;");
+                softwareContainer.getChildren().addAll(selectSoftwareButton);
+
 
                 // Handles what will occur when the software is clicked
-                softwareNode.setOnMousePressed(new EventHandler<MouseEvent>() {
+                selectSoftwareButton.setOnMousePressed(new EventHandler<MouseEvent>() {
 
                     @Override
                     public void handle(MouseEvent event) {
@@ -148,7 +160,7 @@ public class homeController {
                     gridY++;
                 }
 
-                softwareDisplay.add(softwareNode, gridX, gridY); // column, row
+                softwareDisplay.add(softwareContainer, gridX, gridY); // column, row
                 System.out.println(program.name + " " + program.version + " coordinates: (" + gridX + "," + gridY + ")");
 
             }

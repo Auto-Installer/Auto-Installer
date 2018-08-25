@@ -21,7 +21,7 @@
                </children>
             </Pane>
             <Pane fx:id="programSelectionDisplay" layoutX="259.0" layoutY="72.0" prefHeight="650.0" prefWidth="1021.0">
-               
+
             </Pane>
             <Pane layoutX="259.0" layoutY="722.0" prefHeight="79.0" prefWidth="1021.0" style="-fx-background-color: #DCDCDC;">
                <children>
