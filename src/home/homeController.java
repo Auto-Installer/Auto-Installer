@@ -29,6 +29,8 @@ import java.util.List;
 
 
 
+
+
 public class homeController {
     private Data data = new Data();
 
@@ -37,26 +39,6 @@ public class homeController {
     private List softwareToBeInstalled =  new ArrayList();
 
     private ObjectMapper mapper = new ObjectMapper();
-
-    private String softwareBoxFXML = "<children>\n" +
-            "                  <Pane layoutX=\"37.0\" layoutY=\"26.0\" prefHeight=\"188.0\" prefWidth=\"186.0\" style=\"-fx-background-color: #071756; -fx-background-radius: 10px;\">\n" +
-            "                     <children>\n" +
-            "                        <Button layoutX=\"36.0\" layoutY=\"143.0\" mnemonicParsing=\"false\" prefHeight=\"37.0\" prefWidth=\"115.0\" style=\"-fx-background-color: #229b24;\" text=\"Select\" textFill=\"WHITE\">\n" +
-            "                           <font>\n" +
-            "                              <Font size=\"16.0\" />\n" +
-            "                           </font>\n" +
-            "                        </Button>\n" +
-            "                        <Pane layoutX=\"44.0\" layoutY=\"37.0\" prefHeight=\"79.0\" prefWidth=\"80.0\" style=\"-fx-background-color: #fff; -fx-pref-width: 100; -fx-pref-height: 100;\" />\n" +
-            "                        <Text fill=\"WHITE\" layoutX=\"36.0\" layoutY=\"26.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Software Name\">\n" +
-            "                           <font>\n" +
-            "                              <Font size=\"17.0\" />\n" +
-            "                           </font>\n" +
-            "                        </Text>\n" +
-            "                     </children>\n" +
-            "                  </Pane>\n" +
-            "               </children>";
-
-
 
     @FXML Pane programSelectionDisplay;
 
@@ -214,22 +196,24 @@ public class homeController {
         }
     }
 
+    // Installs programs from dropbox
     public void installSoftwares() throws JsonProcessingException, IOException, DbxException {
         System.out.println(softwareToBeInstalled);
         for(int i=0; i < softwareToBeInstalled.size(); i++ ){
             Object selectedProgram = softwareToBeInstalled.get(i);
             String programJSON = mapper.writeValueAsString(selectedProgram);
             Program program = mapper.readValue(programJSON, Program.class);
-
-            data.getDropboxFile((program.name).toString(), (program.category).toString(), ".zip");
+            data.getDropboxFile((program.name).toString(), (program.category).toString(), ".zip", (program.exeName).toString());
         }
     }
 
+    // Displays developerIdes if selected
     @FXML public void selectedDeveloperIDEs(){
         selectedSoftwareCategory = "DeveloperIDEs";
         displayDeveloperIDEs();
     }
 
+    // Displays gamingApplications if selected
     @FXML public void selectedGamingApplications(){
         selectedSoftwareCategory = "GamingApplications";
         displayGamingApplications();
@@ -237,19 +221,16 @@ public class homeController {
 
     @FXML
     protected void initialize() {
-        Data data = new Data();
         // Setting up where the software will be displayed
         programSelectionDisplay.getChildren().addAll(softwareDisplay);
 
-        // Contains the JSON data for the programs
-        var programsData = data.getPrograms();
 
-            if (selectedSoftwareCategory == "DeveloperIDEs") {
-                displayDeveloperIDEs();
-            }
-            else if(selectedSoftwareCategory == "GamingApplications") {
-                displayGamingApplications();
-            }
+        if (selectedSoftwareCategory == "DeveloperIDEs") {
+            displayDeveloperIDEs();
+        }
+        else if(selectedSoftwareCategory == "GamingApplications") {
+            displayGamingApplications();
+        }
 
     }
 

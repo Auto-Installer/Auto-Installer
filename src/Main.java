@@ -39,6 +39,7 @@ public class Main extends Application {
         primaryStage.setTitle("Auto-Installer");
         primaryStage.setScene(loginScene);
         primaryStage.show();
+
     }
 
 

@@ -18,20 +18,24 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import mslinks.ShellLink;
+
 public class Data {
 
     private static final String ACCESS_TOKEN = "Ga6TgeGiiUAAAAAAAAAAghSFY_3xsNKD3u8UKUR4D-DYoSsSjFfoecn1rvrimVnK";
     private DbxRequestConfig config = DbxRequestConfig.newBuilder("dropbox/java-tutorial").build();
     private DbxClientV2 client = new DbxClientV2(config, ACCESS_TOKEN);
     private UnzipUtility unzipUtility = new UnzipUtility();
+    private ShellLink shellLink = new ShellLink();
 
     public Data(){}
 
-    public void getDropboxFile(String name, String category, String fileType) throws DbxException, IOException {
+    public void getDropboxFile(String name, String category, String fileType, String exeName) throws DbxException, IOException {
 
         String home = System.getProperty("user.home");
         String root = "C:\\";
         String ProgramFiles = root + "Program Files/";
+        String shortCutpath = "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs";
 
         // Location in dropbox where the software is located
         String dropboxPath = "/Software/" + category + "/" + name + fileType;
@@ -43,6 +47,7 @@ public class Data {
         try {
             System.out.println("Installing " + name + "...");
             String downloadPath = ProgramFiles + name;
+            String exePath = downloadPath + "/" + exeName;
             FileOutputStream out = new FileOutputStream( ProgramFiles + name + fileType);
             downloader.download(out);
             out.close();
@@ -54,6 +59,8 @@ public class Data {
             System.out.println("Created folder for " + name + ", beginning to unzip the installed .zip");
 
             unzipUtility.extractFolder(zipPath, downloadPath);
+
+            shellLink.createLink(exePath, shortCutpath + name);
 
             System.out.println("Successfully installed " + name);
 

@@ -2,11 +2,13 @@
   "gamingApplications":[
     {
       "name": "Steam",
+      "exeName":"",
       "category": "gamingApplications",
       "version":1.2
     },
     {
       "name":"Epic Games",
+      "exeName":"",
       "category": "gamingApplication",
       "version":1.2
     }
@@ -14,41 +16,49 @@
   "IDEs":[
     {
       "name":"Sublime",
+      "exeName":"sublime_text.exe",
       "category": "IDEs",
       "version":1.2
     },
     {
       "name":"Visual Studio Code",
+      "exeName":"Code.exe",
       "category": "IDEs",
       "version":1.2
     },
     {
       "name":"Eclipse",
+      "exeName":"",
       "category": "IDEs",
       "version":1.2
     },
     {
       "name": "IntelliJ",
+      "exeName":"",
       "category": "IDEs",
       "version": 1.2
     },
     {
       "name": "Notepad++",
+      "exeName":"",
       "category": "IDEs",
       "version": 1.2
     },
     {
       "name": "Brackets.io",
+      "exeName":"",
       "category": "IDEs",
       "version": 1.2
     },
     {
       "name": "Atom",
+      "exeName":"",
       "category": "IDEs",
       "version": 1.2
     },
     {
       "name": "CLion",
+      "exeName":"",
       "category": "IDEs",
       "version": 1.2
     }
