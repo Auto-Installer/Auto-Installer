@@ -5,9 +5,9 @@ An application that makes installing large amounts of software easy by doing the
 This software is directed mostly to people handling a large number of computers and want a way to install programs onto them with ease. Its mean to install developer tools and some other miscellaneous programs.
 <br/>
 ## Current Installable Programs
-Sublime
-Visual Studio Code
-Eclipse
+1. Sublime
+2. Visual Studio Code
+3. Eclipse
 <br/>
 ## Supported Devices
 Windows 7/8/10
