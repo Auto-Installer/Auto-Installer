@@ -3,17 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoInstaller.iml" beforeDir="false" afterPath="$PROJECT_DIR$/autoInstaller.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/autoInstaller/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/autoInstaller/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/autoInstaller/home/homeController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/autoInstaller/home/homeController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/autoInstaller/home/homeController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/autoInstaller/home/homeController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/autoInstaller/home/homeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/autoInstaller/home/homeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/autoInstaller/server/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/autoInstaller/server/Data.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs.json" beforeDir="false" afterPath="$PROJECT_DIR$/programs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/home/homeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/home/homeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Program.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -91,8 +81,8 @@
       <file leaf-file-name="Data.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/server/Data.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="60" column="62" lean-forward="true" selection-start-line="60" selection-start-column="62" selection-end-line="60" selection-end-column="62" />
+            <state relative-caret-position="432">
+              <caret line="56" column="44" lean-forward="true" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -143,6 +133,7 @@
       <find>Insets</find>
       <find>installSoftwares</find>
       <find>INSTALL</find>
+      <find>createLink</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -182,7 +173,7 @@
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -205,6 +196,32 @@
             <path>
               <item name="autoInstaller" type="b2602c69:ProjectViewProjectNode" />
               <item name="autoInstaller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="autoInstaller" type="b2602c69:ProjectViewProjectNode" />
+              <item name="autoInstaller" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="autoInstaller" type="b2602c69:ProjectViewProjectNode" />
+              <item name="autoInstaller" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="mslinks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="autoInstaller" type="b2602c69:ProjectViewProjectNode" />
+              <item name="autoInstaller" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="mslinks" type="462c0819:PsiDirectoryNode" />
+              <item name="mslinks.jar" type="ab9368bb:PsiFileNode" />
+            </path>
+            <path>
+              <item name="autoInstaller" type="b2602c69:ProjectViewProjectNode" />
+              <item name="autoInstaller" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="mslinks" type="462c0819:PsiDirectoryNode" />
+              <item name="mslinks.jar" type="ab9368bb:PsiFileNode" />
+              <item name="mslinks" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="autoInstaller" type="b2602c69:ProjectViewProjectNode" />
@@ -355,7 +372,7 @@
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -366,12 +383,12 @@
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19659936" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19849785" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Terminal" order="13" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.14947917" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.29958245" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
@@ -439,13 +456,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/login/login.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="864">
@@ -678,13 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/programs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/home/homeController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -695,10 +698,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/mslinks/mslinks.jar!/mslinks/ShellLink.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="427" column="20" lean-forward="true" selection-start-line="427" selection-start-column="20" selection-end-line="427" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/programs.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/Data.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="60" column="62" lean-forward="true" selection-start-line="60" selection-start-column="62" selection-end-line="60" selection-end-column="62" />
+        <state relative-caret-position="432">
+          <caret line="56" column="44" lean-forward="true" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

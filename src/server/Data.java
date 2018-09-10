@@ -60,7 +60,8 @@ public class Data {
 
             unzipUtility.extractFolder(zipPath, downloadPath);
 
-            shellLink.createLink(exePath, shortCutpath + name);
+            System.out.println("creating shortcut from " + exePath);
+            shellLink.createLink(exePath, shortCutpath + "\\" + name + ".lnk");
 
             System.out.println("Successfully installed " + name);
 
