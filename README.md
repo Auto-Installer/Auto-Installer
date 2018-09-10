@@ -15,6 +15,6 @@ Windows 7/8/10
 note: Mac support is expected to come at some point
 
 ## What's needed for Mac Support
-The way programs are installed and even ran on a mac is very different from a PC (where the programs are stored and even how there ran). I need to have the functions in the Data class that install things for PC to be changed so that they can Install things on Macs. Since I don't know much about Macs what else needs to be changed in regards to the software I'm unaware.
+The way programs are installed and even run on a mac is very different from a PC (where the programs are stored and even how there ran). I need to have the functions in the Data class that install things for PC to be changed so that they can Install things on Macs. Since I don't know much about Macs what else needs to be changed in regards to the software I'm unaware.
 
 Note: The programs are stored in Dropbox, I'll have to upload the Mac versions of the programs since I only have the windows one right now.
