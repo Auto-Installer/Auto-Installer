@@ -10,7 +10,7 @@ This software is directed mostly to people handling a large number of computers 
 3. Eclipse
 <br/>
 ## Supported Devices
-Windows 7/8/10
+1. Windows 7/8/10
 <br/>
 note: Mac support is expected to come at some point
 
