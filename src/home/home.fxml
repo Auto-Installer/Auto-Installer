@@ -11,7 +11,7 @@
    <children>
       <Pane prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #fff;">
          <children>
-            <Pane layoutX="259.0" prefHeight="72.0" prefWidth="1021.0" style="-fx-background-color: #17946e;">
+            <Pane layoutX="259.0" prefHeight="72.0" prefWidth="1021.0" style="-fx-background-color: #00b6ff;">
                <children>
                   <Text fill="WHITE" layoutX="341.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auto-Installer" textAlignment="CENTER" wrappingWidth="338.13671875">
                      <font>
@@ -25,7 +25,7 @@
             </Pane>
             <Pane layoutX="259.0" layoutY="722.0" prefHeight="79.0" prefWidth="1021.0" style="-fx-background-color: #DCDCDC;">
                <children>
-                  <Button layoutX="431.0" layoutY="16.0" mnemonicParsing="false" onMouseClicked="#installSoftwares" prefHeight="48.0" prefWidth="160.0" style="-fx-background-color: #1aaa7f;" text="INSTALL" textAlignment="CENTER" textFill="WHITE">
+                  <Button layoutX="431.0" layoutY="16.0" mnemonicParsing="false" onMouseClicked="#installSoftwares" prefHeight="48.0" prefWidth="160.0" style="-fx-background-color: #008ac1;" text="INSTALL" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="21.0" />
                      </font>
@@ -36,19 +36,19 @@
                </children>
             </Pane>
          </children></Pane>
-      <Pane prefHeight="800.0" prefWidth="261.0" style="-fx-background-color: #1DC08F; -fx-border-image-width: 0 1 0 1;">
+      <Pane prefHeight="800.0" prefWidth="261.0" style="-fx-background-color: #00b6ff; -fx-border-image-width: 0 1 0 1;">
          <children>
-            <ListView onMouseClicked="#selectedDeveloperIDEs" prefHeight="36.0" prefWidth="261.0" style="-fx-border-color: #17946e; -fx-border-width: 0 0 1 0; -fx-background-color: #1aaa7f;">
+            <ListView onMouseClicked="#selectedDeveloperIDEs" prefHeight="36.0" prefWidth="261.0" style="-fx-border-color: #ffffff; -fx-border-width: 0 0 1 0; -fx-background-color: #008ac1;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ListView>
-            <ListView layoutY="36.0" prefHeight="36.0" prefWidth="261.0" style="-fx-border-color: #17946e; -fx-border-width: 0 0 1 0; -fx-background-color: #1aaa7f;">
+            <ListView layoutY="36.0" prefHeight="36.0" prefWidth="261.0" style="-fx-border-color: #ffffff; -fx-border-width: 0 0 1 0; -fx-background-color: #008ac1;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ListView>
-            <ListView layoutY="72.0" onMouseClicked="#selectedGamingApplications" prefHeight="36.0" prefWidth="261.0" style="-fx-border-color: #17946e; -fx-border-width: 0 0 1 0; -fx-background-color: #1aaa7f;">
+            <ListView layoutY="72.0" onMouseClicked="#selectedGamingApplications" prefHeight="36.0" prefWidth="261.0" style="-fx-border-color: #ffffff; -fx-border-width: 0 0 1 0; -fx-background-color: #008ac1;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
