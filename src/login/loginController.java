@@ -1,20 +1,54 @@
 package login;
-import javafx.fxml.FXML;
+
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
+import javafx.util.Duration;
 
-import java.awt.*;
+import java.time.Clock;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+
+
 
 // Handles logins
 
 public class loginController {
-    @FXML TextField usernameInput;
-    @FXML PasswordField passwordInput;
+    @FXML
+    Text autoInstallerText;
+    @FXML
+    Pane loader;
+    @FXML
+    private AnchorPane ap;
+
+
+
+    public void animateLoader() throws InterruptedException{
+
+        FadeTransition ft = new FadeTransition(Duration.millis(2000), ap);
+        ft.setFromValue(1.0);
+        ft.setToValue(0);
+        ft.setCycleCount(1);
+
+        ft.play();
+        ft.setOnFinished(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                routeToHome();
+            }
+
+        });
+
+
+    }
 
     private Scene homeScene;
 
@@ -22,24 +56,20 @@ public class loginController {
         homeScene = scene;
     }
 
-    public void routeToHome(ActionEvent actionEvent){
-        Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+
+    public void routeToHome(){
+        Stage primaryStage = (Stage) ap.getScene().getWindow();
         primaryStage.setScene(homeScene);
     }
 
-    public void submitLogin(ActionEvent actionEvent){
-
-        if((usernameInput.getText().equals("john")) && (passwordInput.getText().equals("doe"))) {
-            System.out.println("Successfully logged in!");
-            Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            primaryStage.setScene(homeScene);
-        }
-        else{
-            System.out.println("Those credentials were wrong");
+    public void initialize(){
+        try{
+            animateLoader();
+        }catch (Exception e){
+            System.out.println("Error: " + e);
         }
 
     }
-
 
 
 }

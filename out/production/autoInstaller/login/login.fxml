@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,67 +10,23 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.loginController">
+<AnchorPane fx:id="ap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.loginController">
    <children>
-      <Pane prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #1DC08F;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #00b6ff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Pane layoutX="394.0" layoutY="135.0" prefHeight="265.0" prefWidth="493.0">
+            <Text fill="WHITE" layoutX="246.0"  fx:id="autoInstallerText" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auto-Installer">
+               <font>
+                  <Font name="Calibri Light" size="144.0" />
+               </font>
+            </Text>
+            <Pane id="loader" layoutX="540.0" layoutY="472.0" prefHeight="200.0" prefWidth="200.0" fx:id="loader">
                <children>
-                  <Text fill="WHITE" layoutY="264.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Auto-Installer" textAlignment="CENTER" wrappingWidth="493.0">
-                     <font>
-                        <Font name="Consolas" size="41.0" />
-                     </font>
-                  </Text>
-               </children>
-            </Pane>
-            <Pane layoutX="246.0" layoutY="428.0" prefHeight="90.0" prefWidth="790.0">
-               <children>
-                  <TextField fx:id="usernameInput" layoutX="103.0" layoutY="15.0" prefHeight="61.0" prefWidth="610.0" promptText="Email">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="TEXT" />
-                     </cursor>
-                  </TextField>
-               </children>
-            </Pane>
-            <Pane layoutX="246.0" layoutY="543.0" prefHeight="90.0" prefWidth="790.0">
-               <children>
-                  <PasswordField fx:id="passwordInput" layoutX="103.0" layoutY="15.0" prefHeight="61.0" prefWidth="610.0" promptText="Password">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="TEXT" />
-                     </cursor>
-                  </PasswordField>
-               </children>
-            </Pane>
-            <Pane layoutX="553.0" layoutY="642.0" prefHeight="52.0" prefWidth="206.0">
-               <children>
-                  <Button fx:id="submitButton" layoutY="2.0" mnemonicParsing="false" onAction="#submitLogin" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #168E68;" text="Login" textFill="WHITE">
-                     <font>
-                        <Font size="22.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-               </children>
-            </Pane>
-            <Pane layoutX="1066.0" layoutY="745.0" prefHeight="41.0" prefWidth="200.0">
-               <children>
-                  <Button onAction="#routeToHome" layoutX="-7.0" layoutY="-8.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="214.0" style="-fx-background-color: rgba(0,0,0,0);" text="Skip Logging In" textFill="WHITE">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-               </children>
-            </Pane>
+                  <ImageView fitHeight="104.0" fitWidth="99.0" layoutX="51.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/ajax-loading-gif-transparent-background-8.gif" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
          </children>
       </Pane>
    </children>
