@@ -28,9 +28,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
-
-
 public class homeController {
     private Data data = new Data();
 

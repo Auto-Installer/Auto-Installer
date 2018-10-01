@@ -31,7 +31,7 @@
                         </Text>
                      </children>
                   </Pane>
-                  <Pane layoutX="847.0" prefHeight="72.0" prefWidth="426.0" style="-fx-background-color: #00b6ff;">
+                  <Pane layoutX="847.0" prefHeight="72.0"  prefWidth="426.0" style="-fx-background-color: #00b6ff;">
                      <children>
                         <Text fill="WHITE" layoutX="53.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About" textAlignment="CENTER" wrappingWidth="320.0">
                            <font>

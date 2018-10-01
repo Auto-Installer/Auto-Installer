@@ -25,7 +25,7 @@ public class Main extends Application {
         Scene loginScene = new Scene(loginPane, 1280, 800);
 
         // Sets Home Stage
-        FXMLLoader homePaneLoader = new FXMLLoader(getClass().getResource("./home/home.fxml"));
+        FXMLLoader homePaneLoader = new FXMLLoader(getClass().getResource("./home/softwares.fxml"));
         Parent homePane = homePaneLoader.load();
         Scene homeScene = new Scene(homePane, 1280, 800);
         homeScene.getStylesheets().add("./styles/home.css");

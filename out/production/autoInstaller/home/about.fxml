@@ -42,6 +42,30 @@
                   </Pane>
                </children>
             </Pane>
+            <Pane layoutY="72.0" prefHeight="727.0" prefWidth="1280.0" style="-fx-background-color: white;">
+               <children>
+                  <Text layoutX="424.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auto-Installer" textAlignment="CENTER" wrappingWidth="432.052734375">
+                     <font>
+                        <Font name="Segoe UI Light" size="61.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="195.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Making installing programs on a large number of programs for lazy people easy! :)" textAlignment="CENTER" wrappingWidth="889.052734375">
+                     <font>
+                        <Font name="Segoe UI Light" size="31.0" />
+                     </font>
+                  </Text>
+                  <Text layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Software Developer" textAlignment="CENTER" wrappingWidth="633.052734375">
+                     <font>
+                        <Font name="Segoe UI Light" size="31.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="640.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Website Developer" textAlignment="CENTER" wrappingWidth="633.052734375">
+                     <font>
+                        <Font name="Segoe UI Light" size="31.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
          </children></Pane>
    </children>
 </AnchorPane>
