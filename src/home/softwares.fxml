@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -9,11 +10,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.homeController">
    <children>
-      <Pane prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #fff;">
+      <Pane prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #fff;" stylesheets="@styles.css">
          <children>
             <Pane prefHeight="72.0" prefWidth="1280.0" style="-fx-background-color: #00b6ff;">
                <children>
-                  <Pane prefHeight="72.0" prefWidth="426.0" style="-fx-background-color: #00b6ff;">
+                  <Pane prefHeight="72.0" prefWidth="426.0" styleClass="navBarCategory">
                      <children>
                         <Text fill="WHITE" layoutX="53.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Softwares" textAlignment="CENTER" wrappingWidth="320.0">
                            <font>
@@ -22,7 +23,7 @@
                         </Text>
                      </children>
                   </Pane>
-                  <Pane layoutX="428.0" prefHeight="72.0" prefWidth="426.0" style="-fx-background-color: #00b6ff;">
+                  <Pane layoutX="428.0" prefHeight="72.0" prefWidth="426.0" styleClass="navBarCategory">
                      <children>
                         <Text fill="WHITE" layoutX="53.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Install" textAlignment="CENTER" wrappingWidth="320.0">
                            <font>
@@ -31,7 +32,7 @@
                         </Text>
                      </children>
                   </Pane>
-                  <Pane layoutX="847.0" prefHeight="72.0" prefWidth="426.0" style="-fx-background-color: #00b6ff;">
+                  <Pane layoutX="847.0" prefHeight="72.0" prefWidth="436.0" styleClass="navBarCategory">
                      <children>
                         <Text fill="WHITE" layoutX="53.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About" textAlignment="CENTER" wrappingWidth="320.0">
                            <font>
@@ -42,7 +43,28 @@
                   </Pane>
                </children>
             </Pane>
-            <Pane fx:id="programSelectionDisplay" layoutY="72.0" prefHeight="731.0" prefWidth="1280.0" style="-fx-background-color: white;" />
+            <Pane fx:id="programSelectionDisplay" layoutY="72.0" prefHeight="731.0" prefWidth="1280.0" style="-fx-background-color: white;">
+               <children>
+                  <Pane layoutX="14.0" layoutY="14.0" prefHeight="237.0" prefWidth="200.0" style="-fx-background-color: #f2f2f2; -fx-border-width: 100; -fx-border-color: #f2f2f2; -fx-border-radius: 100;">
+                     <children>
+                        <ImageView fitHeight="129.0" fitWidth="141.0" layoutX="36.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../vsCode.png" />
+                           </image>
+                        </ImageView>
+                        <Text layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Software" textAlignment="CENTER" wrappingWidth="200.0">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Text>
+                        <CheckBox layoutX="86.0" layoutY="185.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="26.0">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </CheckBox>
+                     </children>
+                  </Pane>
+               </children></Pane>
          </children></Pane>
    </children>
 </AnchorPane>
