@@ -14,19 +14,12 @@
    <children>
       <Pane prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #00b6ff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Text fill="WHITE" layoutX="246.0"  fx:id="autoInstallerText" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auto-Installer">
+            <Text fx:id="autoInstallerText" fill="WHITE" layoutX="246.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auto-Installer">
                <font>
                   <Font name="Calibri Light" size="144.0" />
                </font>
             </Text>
-            <Pane id="loader" layoutX="540.0" layoutY="472.0" prefHeight="200.0" prefWidth="200.0" fx:id="loader">
-               <children>
-                  <ImageView fitHeight="104.0" fitWidth="99.0" layoutX="51.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/ajax-loading-gif-transparent-background-8.gif" />
-                     </image>
-                  </ImageView>
-               </children></Pane>
+            <Pane id="loader" fx:id="loader" layoutX="540.0" layoutY="472.0" prefHeight="200.0" prefWidth="200.0" />
          </children>
       </Pane>
    </children>

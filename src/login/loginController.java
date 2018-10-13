@@ -1,6 +1,7 @@
 package login;
 
 import javafx.animation.FadeTransition;
+import javafx.animation.SequentialTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -33,18 +34,27 @@ public class loginController {
 
     public void animateLoader() throws InterruptedException{
 
-        FadeTransition ft = new FadeTransition(Duration.millis(2000), ap);
-        ft.setFromValue(1.0);
-        ft.setToValue(0);
-        ft.setCycleCount(1);
+        FadeTransition fadeIn = new FadeTransition(Duration.millis(3000), autoInstallerText);
+        fadeIn.setFromValue(0);
+        fadeIn.setToValue(1.0);
 
-        ft.play();
-        ft.setOnFinished(new EventHandler<ActionEvent>() {
+        FadeTransition fadeOut = new FadeTransition(Duration.millis(3000), autoInstallerText);
+        fadeOut.setFromValue(1.0);
+        fadeOut.setToValue(0);
+
+
+        SequentialTransition seqT = new SequentialTransition(fadeIn, fadeOut);
+        seqT.setCycleCount(3);
+
+        seqT.play();
+
+        seqT.setOnFinished(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                System.out.println("Finished");
                 routeToHome();
-            }
 
+            }
         });
 
 
