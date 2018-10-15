@@ -1,15 +1,25 @@
 package home;
 import com.dropbox.core.DbxException;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import javafx.animation.FadeTransition;
+import javafx.animation.SequentialTransition;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
+import javafx.util.Duration;
 import server.Data;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
@@ -38,6 +48,9 @@ public class homeController {
     private ObjectMapper mapper = new ObjectMapper();
 
     @FXML Pane programSelectionDisplay;
+
+    @FXML
+    Pane softwaresPane;
 
     private String selectedSoftwareCategory = "DeveloperIDEs";
 
@@ -116,8 +129,9 @@ public class homeController {
         }
     }
 
-    private void displayDeveloperIDEs() {
 
+
+    private void displayDeveloperIDEs() {
 
         var gridX = -1;
         var gridY = 0;
@@ -138,35 +152,8 @@ public class homeController {
                 String programJSON = mapper.writeValueAsString(selectedProgram);
                 Program program = mapper.readValue(programJSON, Program.class);
 
-                Pane softwareContainer = new Pane();
-                softwareContainer.setStyle("-fx-background-color: #071756; -fx-background-radius: 10px;");
-                softwareContainer.setPrefSize(188.0,186.0);
+                Pane softwareContainer = createSoftwareNode(program);
 
-                Text softwareName = new Text();
-                softwareName.setFont(new Font(17.0));
-                softwareName.setText((program.name).toString());
-                softwareName.setFill(Color.WHITE);
-                softwareName.setLayoutY(26.0);
-                softwareName.setLayoutX(10.0);
-
-
-                Button selectSoftwareButton = new Button("SELECT");
-                selectSoftwareButton.setLayoutX(36.0);
-                selectSoftwareButton.setLayoutY(143.0);
-                selectSoftwareButton.setStyle("-fx-background-color: #229b24;");
-
-                softwareContainer.getChildren().addAll(selectSoftwareButton, softwareName);
-
-
-                // Handles what will occur when the software is clicked
-                selectSoftwareButton.setOnMousePressed(new EventHandler<MouseEvent>() {
-
-                    @Override
-                    public void handle(MouseEvent event) {
-                        softwareToBeInstalled.add(program);
-                        System.out.println(program);
-                    }
-                });
 
                 // Determines in which cell the software will be displayed in
                 if(gridX < 4){
@@ -204,6 +191,53 @@ public class homeController {
         }
     }
 
+    public static Pane createSoftwareNode(Program program){
+        // Software Pane (Container for everything that goes into the software node)
+        Pane softwareContainer = new Pane();
+        softwareContainer.setStyle("-fx-background-color: #eaeaea;");
+        softwareContainer.setPrefSize(200.0,230.0);
+
+        // Software Image
+        ImageView softwareImgContainer = new ImageView();
+        softwareImgContainer.setLayoutX(36.0);
+        softwareImgContainer.setLayoutY(51.0);
+        softwareImgContainer.setFitHeight(128.0);
+        softwareImgContainer.setFitWidth(128.0);
+        Image softwareImg = new Image("@../vsCode.png");
+        softwareImgContainer.setImage(softwareImg);
+
+        // Software Selector (CheckBox)
+        CheckBox softwareSelectionButton = new CheckBox();
+        softwareSelectionButton.setLayoutX(85.0);
+        softwareSelectionButton.setLayoutY(179.0);
+        softwareSelectionButton.setFont(Font.font(25.0));
+        softwareSelectionButton.setCursor(Cursor.HAND);
+
+        // Software Name
+        Text softwareName = new Text();
+        softwareName.setFont(new Font(22.0));
+        softwareName.setText((program.name).toString());
+        softwareName.setFill(Color.WHITE);
+        softwareName.setLayoutY(30.0);
+        softwareName.setTextAlignment(TextAlignment.CENTER);
+
+        // Handles what will occur when the software is clicked
+        softwareSelectionButton.setOnMousePressed(new EventHandler<MouseEvent>() {
+
+            @Override
+            public void handle(MouseEvent event) {
+                softwareToBeInstalled.add(program);
+                System.out.println(program);
+            }
+        });
+
+        softwareContainer.getChildren().addAll(softwareImgContainer, softwareSelectionButton, softwareName);
+
+        return softwareContainer;
+
+
+    }
+
     // Displays developerIdes if selected
     @FXML public void selectedDeveloperIDEs(){
         selectedSoftwareCategory = "DeveloperIDEs";
@@ -214,6 +248,27 @@ public class homeController {
     @FXML public void selectedGamingApplications(){
         selectedSoftwareCategory = "GamingApplications";
         displayGamingApplications();
+    }
+
+    public void animateLoader() throws InterruptedException{
+
+
+
+        FadeTransition fadeInSoftware = new FadeTransition(Duration.millis(3000), softwaresPane);
+        fadeInSoftware.setFromValue(0);
+        fadeInSoftware.setToValue(1.0);
+
+
+        fadeInSoftware.play();
+        fadeInSoftware.setOnFinished(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+
+            }
+        });
+
+
     }
 
     @FXML
@@ -228,6 +283,17 @@ public class homeController {
         else if(selectedSoftwareCategory == "GamingApplications") {
             displayGamingApplications();
         }
+
+
+
+        try{
+            animateLoader();
+
+        }catch(Exception e){
+
+        }
+
+
 
     }
 

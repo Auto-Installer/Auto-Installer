@@ -8,3 +8,7 @@
 }
 
 
+.softwareCategory:hover{
+   -fx-background-color: #00293a;
+}
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="230.0" prefWidth="200.0" style="-fx-background-color: #eaeaea;">
+         <children>
+            <ImageView fitHeight="128.0" fitWidth="128.0" layoutX="36.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../vsCode.png" />
+               </image>
+            </ImageView>
+            <CheckBox contentDisplay="CENTER" graphicTextGap="0.0" layoutX="85.0" layoutY="179.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="0.0" textAlignment="CENTER">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </CheckBox>
+            <Text layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="App-Name" textAlignment="CENTER" wrappingWidth="200.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -34,24 +34,24 @@ public class loginController {
 
     public void animateLoader() throws InterruptedException{
 
-        FadeTransition fadeIn = new FadeTransition(Duration.millis(3000), autoInstallerText);
-        fadeIn.setFromValue(0);
-        fadeIn.setToValue(1.0);
-
-        FadeTransition fadeOut = new FadeTransition(Duration.millis(3000), autoInstallerText);
-        fadeOut.setFromValue(1.0);
-        fadeOut.setToValue(0);
+        FadeTransition fadeInText = new FadeTransition(Duration.millis(3000), autoInstallerText);
+        fadeInText.setFromValue(0);
+        fadeInText.setToValue(1.0);
 
 
-        SequentialTransition seqT = new SequentialTransition(fadeIn, fadeOut);
-        seqT.setCycleCount(3);
+        FadeTransition fadeOutLoader = new FadeTransition(Duration.millis(1000), ap);
+        fadeOutLoader.setFromValue(1.0);
+        fadeOutLoader.setToValue(0);
+
+
+
+        SequentialTransition seqT = new SequentialTransition(fadeInText, fadeOutLoader);
 
         seqT.play();
 
         seqT.setOnFinished(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Finished");
                 routeToHome();
 
             }
