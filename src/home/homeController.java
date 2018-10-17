@@ -43,7 +43,7 @@ public class homeController {
 
     private GridPane softwareDisplay = new GridPane();
 
-    private List softwareToBeInstalled =  new ArrayList();
+    private static List softwareToBeInstalled =  new ArrayList();
 
     private ObjectMapper mapper = new ObjectMapper();
 
@@ -74,35 +74,9 @@ public class homeController {
                 String programJSON = mapper.writeValueAsString(selectedProgram);
                 Program program = mapper.readValue(programJSON, Program.class);
 
-                Pane softwareContainer = new Pane();
-                softwareContainer.setStyle("-fx-background-color: #071756; -fx-background-radius: 10px;");
-                softwareContainer.setPrefSize(188.0,186.0);
 
-                Text softwareName = new Text();
-                softwareName.setFont(new Font(17.0));
-                softwareName.setText((program.name).toString());
-                softwareName.setFill(Color.WHITE);
-                softwareName.setLayoutY(26.0);
-                softwareName.setLayoutX(10.0);
+                Pane softwareContainer = createSoftwareNode(program);
 
-
-                Button selectSoftwareButton = new Button("SELECT");
-                selectSoftwareButton.setLayoutX(36.0);
-                selectSoftwareButton.setLayoutY(143.0);
-                selectSoftwareButton.setStyle("-fx-background-color: #229b24;");
-
-                softwareContainer.getChildren().addAll(selectSoftwareButton, softwareName);
-
-
-                // Handles what will occur when the software is clicked
-                selectSoftwareButton.setOnMousePressed(new EventHandler<MouseEvent>() {
-
-                    @Override
-                    public void handle(MouseEvent event) {
-                        softwareToBeInstalled.add(program);
-                        System.out.println(program);
-                    }
-                });
 
                 // Determines in which cell the software will be displayed in
                 if(gridX < 4){
@@ -129,8 +103,6 @@ public class homeController {
         }
     }
 
-
-
     private void displayDeveloperIDEs() {
 
         var gridX = -1;
@@ -144,6 +116,7 @@ public class homeController {
         mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
 
         var programsData = data.getPrograms();
+
         try {
             //Gets the properties for all of the IDE applications
             for (int i = 0; programsData.IDEs.length > i; i++) {
@@ -153,7 +126,6 @@ public class homeController {
                 Program program = mapper.readValue(programJSON, Program.class);
 
                 Pane softwareContainer = createSoftwareNode(program);
-
 
                 // Determines in which cell the software will be displayed in
                 if(gridX < 4){
@@ -199,12 +171,19 @@ public class homeController {
 
         // Software Image
         ImageView softwareImgContainer = new ImageView();
+
+        Image softwareImg = new Image("file: vsCode.png");
+        softwareImgContainer.setImage(softwareImg);
+
         softwareImgContainer.setLayoutX(36.0);
         softwareImgContainer.setLayoutY(51.0);
         softwareImgContainer.setFitHeight(128.0);
         softwareImgContainer.setFitWidth(128.0);
-        Image softwareImg = new Image("@../vsCode.png");
-        softwareImgContainer.setImage(softwareImg);
+        softwareImgContainer.setSmooth(true);
+        softwareImgContainer.setCache(true);
+        softwareImgContainer.setPreserveRatio(true);
+
+
 
         // Software Selector (CheckBox)
         CheckBox softwareSelectionButton = new CheckBox();
@@ -231,7 +210,7 @@ public class homeController {
             }
         });
 
-        softwareContainer.getChildren().addAll(softwareImgContainer, softwareSelectionButton, softwareName);
+        softwareContainer.getChildren().addAll(softwareSelectionButton, softwareName, softwareImgContainer);
 
         return softwareContainer;
 
