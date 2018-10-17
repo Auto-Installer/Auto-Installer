@@ -172,8 +172,10 @@ public class homeController {
         // Software Image
         ImageView softwareImgContainer = new ImageView();
 
-        Image softwareImg = new Image("file: vsCode.png");
+        Image softwareImg = new Image("./icons/vsCode.png");
         softwareImgContainer.setImage(softwareImg);
+
+        System.out.println("Issue loading Image? " + softwareImg.isError());
 
         softwareImgContainer.setLayoutX(36.0);
         softwareImgContainer.setLayoutY(51.0);
