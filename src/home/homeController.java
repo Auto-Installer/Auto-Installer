@@ -237,31 +237,10 @@ public class homeController {
 
         return softwareContainer;
 
-
     }
 
 
 
-    public void animateLoader() throws InterruptedException{
-
-
-
-        FadeTransition fadeInSoftware = new FadeTransition(Duration.millis(3000), softwaresPane);
-        fadeInSoftware.setFromValue(0);
-        fadeInSoftware.setToValue(1.0);
-
-
-        fadeInSoftware.play();
-        fadeInSoftware.setOnFinished(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-
-
-            }
-        });
-
-
-    }
 
     @FXML
     protected void initialize() {
@@ -275,18 +254,6 @@ public class homeController {
         else if(selectedSoftwareCategory == "GamingApplications") {
             displayGamingApplications();
         }
-
-
-
-        try{
-            animateLoader();
-
-        }catch(Exception e){
-
-        }
-
-
-
     }
 
 }
