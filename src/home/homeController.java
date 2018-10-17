@@ -202,11 +202,12 @@ public class homeController {
 
 
         // Software Selector (CheckBox)
-        CheckBox softwareSelectionButton = new CheckBox();
-        softwareSelectionButton.setLayoutX(85.0);
-        softwareSelectionButton.setLayoutY(179.0);
-        softwareSelectionButton.setFont(Font.font(25.0));
-        softwareSelectionButton.setCursor(Cursor.HAND);
+        CheckBox softwareSelectionCheckBox = new CheckBox();
+
+        softwareSelectionCheckBox.setLayoutX(85.0);
+        softwareSelectionCheckBox.setLayoutY(179.0);
+        softwareSelectionCheckBox.setFont(Font.font(25.0));
+        softwareSelectionCheckBox.setCursor(Cursor.HAND);
 
         // Software Name
         Text softwareName = new Text();
@@ -216,17 +217,23 @@ public class homeController {
         softwareName.setLayoutY(30.0);
         softwareName.setTextAlignment(TextAlignment.CENTER);
 
-        // Handles what will occur when the software is clicked
-        softwareSelectionButton.setOnMousePressed(new EventHandler<MouseEvent>() {
+        // Handles what will occur when the software is selected
+        softwareSelectionCheckBox.setOnMousePressed(new EventHandler<MouseEvent>() {
 
             @Override
             public void handle(MouseEvent event) {
-                softwareToBeInstalled.add(program);
-                System.out.println(program);
+                if(!(softwareSelectionCheckBox.isSelected())){
+                    softwareToBeInstalled.add(program);
+                    System.out.println("Added " +  program + " to be installed");
+                }else{
+                    softwareToBeInstalled.remove(program);
+                    System.out.println("Removed " +  program + " from being installed");
+                }
+
             }
         });
 
-        softwareContainer.getChildren().addAll(softwareSelectionButton, softwareName, softwareImgContainer);
+        softwareContainer.getChildren().addAll(softwareSelectionCheckBox, softwareName, softwareImgContainer);
 
         return softwareContainer;
 
