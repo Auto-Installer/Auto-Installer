@@ -47,16 +47,30 @@ public class homeController {
 
     private ObjectMapper mapper = new ObjectMapper();
 
+    // FXML Objects
     @FXML Pane programSelectionDisplay;
 
-    @FXML
-    Pane softwaresPane;
+    @FXML Pane softwaresPane;
+
+    // Displays developerIdes if selected
+    @FXML private void selectedDeveloperIDEs(){
+        selectedSoftwareCategory = "DeveloperIDEs";
+        displayDeveloperIDEs();
+    }
+
+    // Displays gamingApplications if selected
+    @FXML private void selectedGamingApplications(){
+        selectedSoftwareCategory = "GamingApplications";
+        displayGamingApplications();
+    }
+
 
     private String selectedSoftwareCategory = "DeveloperIDEs";
 
     private void displayGamingApplications(){
-        var gridX = 0;
+        var gridX = -1;
         var gridY = 0;
+
         softwareDisplay.getChildren().clear();
         softwareDisplay.setHgap(10); //horizontal gap in pixels => that's what you are asking for
         softwareDisplay.setVgap(10); //vertical gap in pixels
@@ -219,17 +233,7 @@ public class homeController {
 
     }
 
-    // Displays developerIdes if selected
-    @FXML public void selectedDeveloperIDEs(){
-        selectedSoftwareCategory = "DeveloperIDEs";
-        displayDeveloperIDEs();
-    }
 
-    // Displays gamingApplications if selected
-    @FXML public void selectedGamingApplications(){
-        selectedSoftwareCategory = "GamingApplications";
-        displayGamingApplications();
-    }
 
     public void animateLoader() throws InterruptedException{
 

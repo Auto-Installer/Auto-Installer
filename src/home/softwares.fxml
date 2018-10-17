@@ -46,7 +46,7 @@
             <Pane fx:id="programSelectionDisplay" layoutX="230.0" layoutY="72.0" prefHeight="731.0" prefWidth="1053.0" style="-fx-background-color: white;" />
             <Pane layoutY="72.0" prefHeight="731.0" prefWidth="231.0" style="-fx-background-color: #025272;">
                <children>
-                  <Pane layoutY="58.0" prefHeight="58.0" prefWidth="231.0" styleClass="softwareCategory">
+                  <Pane onMouseClicked="#selectedGamingApplications" layoutY="58.0" prefHeight="58.0" prefWidth="231.0" styleClass="softwareCategory">
                      <children>
                         <Text fill="WHITE" layoutX="4.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gaming" textAlignment="CENTER" wrappingWidth="224.0">
                            <font>
@@ -58,8 +58,8 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Pane>
-                  <Pane layoutY="116.0" prefHeight="58.0" prefWidth="231.0" styleClass="softwareCategory">
-                     <children>
+                  <Pane   layoutY="116.0" prefHeight="58.0" prefWidth="231.0" styleClass="softwareCategory">
+                     <children >
                         <Text fill="WHITE" layoutX="4.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Workspace" textAlignment="CENTER" wrappingWidth="224.0">
                            <font>
                               <Font name="Consolas Bold" size="21.0" />
@@ -70,7 +70,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Pane>
-                  <Pane prefHeight="58.0" prefWidth="231.0" styleClass="softwareCategory">
+                  <Pane onMouseClicked="#selectedDeveloperIDEs" prefHeight="58.0" prefWidth="231.0" styleClass="softwareCategory">
                      <children>
                         <Text fill="WHITE" layoutX="4.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Software IDEs" textAlignment="CENTER" wrappingWidth="224.0">
                            <font>
