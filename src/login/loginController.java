@@ -67,7 +67,6 @@ public class loginController {
         homeScene = scene;
     }
 
-
     public void routeToHome(){
         Stage primaryStage = (Stage) ap.getScene().getWindow();
         primaryStage.setScene(homeScene);

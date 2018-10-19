@@ -5,9 +5,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import login.loginController;
+import install.installController;
 import home.homeController;
 import javafx.scene.image.Image;
-import navBar.NavBar;
 import server.Data;
 
 import java.io.File;
@@ -42,9 +42,13 @@ public class Main extends Application {
         loginController loginPaneController = loginPaneLoader.getController();
         loginPaneController.setHomeScene(homeScene);
 
-        // injecting install scene into the nav class
+        // injecting install scene into the homeController
         homeController homePaneController = homePaneLoader.getController();
         homePaneController.setInstallScene(installScene);
+
+        // injecting softwares scene into the installController
+        installController installPaneController = installPaneLoader.getController();
+        installPaneController.setInstallScene(homeScene);
 
 
         primaryStage.getIcons().add(new Image("./icon.png"));
