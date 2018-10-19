@@ -1,0 +1,14 @@
+.navBarCategory{
+    -fx-background-color: #00b6ff;
+}
+
+.navBarCategory:hover{
+    -fx-cursor: hand;
+    -fx-background-color: #0086bc;
+}
+
+
+.softwareCategory:hover{
+   -fx-background-color: #00293a;
+}
+

@@ -10,7 +10,7 @@
 
 <AnchorPane fx:id="softwaresPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.homeController">
    <children>
-      <Pane prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #fff;" stylesheets="@styles.css">
+      <Pane prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #fff;" stylesheets="@../styles.css">
          <children>
             <Pane prefHeight="72.0" prefWidth="1280.0" style="-fx-background-color: #00b6ff;">
                <children>

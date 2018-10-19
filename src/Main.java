@@ -30,13 +30,11 @@ public class Main extends Application {
         FXMLLoader homePaneLoader = new FXMLLoader(getClass().getResource("./home/softwares.fxml"));
         Parent homePane = homePaneLoader.load();
         Scene homeScene = new Scene(homePane, 1280, 800);
-        homeScene.getStylesheets().add("./styles/home.css");
 
         // Sets Install Stage
         FXMLLoader installPaneLoader = new FXMLLoader(getClass().getResource("./install/install.fxml"));
         Parent installPane = installPaneLoader.load();
         Scene installScene = new Scene(installPane, 1280, 800);
-        installScene.getStylesheets().add("./styles/home.css"); // Subject to change soon
 
         // injecting home scene into the controller of the login scene
         loginController loginPaneController = loginPaneLoader.getController();
