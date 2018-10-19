@@ -5,7 +5,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import login.loginController;
+import home.homeController;
 import javafx.scene.image.Image;
+import navBar.NavBar;
 import server.Data;
 
 import java.io.File;
@@ -30,9 +32,19 @@ public class Main extends Application {
         Scene homeScene = new Scene(homePane, 1280, 800);
         homeScene.getStylesheets().add("./styles/home.css");
 
+        // Sets Install Stage
+        FXMLLoader installPaneLoader = new FXMLLoader(getClass().getResource("./install/install.fxml"));
+        Parent installPane = installPaneLoader.load();
+        Scene installScene = new Scene(installPane, 1280, 800);
+        installScene.getStylesheets().add("./styles/home.css"); // Subject to change soon
+
         // injecting home scene into the controller of the login scene
         loginController loginPaneController = loginPaneLoader.getController();
         loginPaneController.setHomeScene(homeScene);
+
+        // injecting install scene into the nav class
+        homeController homePaneController = homePaneLoader.getController();
+        homePaneController.setInstallScene(installScene);
 
 
         primaryStage.getIcons().add(new Image("./icon.png"));

@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Cursor;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.image.Image;
@@ -19,6 +20,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import server.Data;
 import javafx.fxml.FXML;
@@ -38,6 +40,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
 public class homeController {
     private Data data = new Data();
 
@@ -50,7 +53,7 @@ public class homeController {
     // FXML Objects
     @FXML Pane programSelectionDisplay;
 
-    @FXML Pane softwaresPane;
+    @FXML AnchorPane softwaresPane;
 
     // Displays developerIdes if selected
     @FXML private void selectedDeveloperIDEs(){
@@ -67,6 +70,7 @@ public class homeController {
 
     private String selectedSoftwareCategory = "DeveloperIDEs";
 
+    // Displays Applications based on the Category Selected
     private void displayGamingApplications(){
         var gridX = -1;
         var gridY = 0;
@@ -177,6 +181,7 @@ public class homeController {
         }
     }
 
+    // Method for creating software icons
     public static Pane createSoftwareNode(Program program){
         // Software Pane (Container for everything that goes into the software node)
         Pane softwareContainer = new Pane();
@@ -239,6 +244,20 @@ public class homeController {
 
     }
 
+    private Scene installScene;
+
+    public void setInstallScene(Scene scene){
+
+        installScene = scene;
+    }
+
+
+    // Nav Bar
+    @FXML private void goToInstallation(){
+
+        Stage primaryStage = (Stage) softwaresPane.getScene().getWindow();
+        primaryStage.setScene(installScene);
+    }
 
 
 
@@ -246,7 +265,6 @@ public class homeController {
     protected void initialize() {
         // Setting up where the software will be displayed
         programSelectionDisplay.getChildren().addAll(softwareDisplay);
-
 
         if (selectedSoftwareCategory == "DeveloperIDEs") {
             displayDeveloperIDEs();

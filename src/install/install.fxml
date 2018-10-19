@@ -7,13 +7,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.homeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="install.installController">
    <children>
       <Pane prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #fff;">
          <children>
             <Pane prefHeight="72.0" prefWidth="1280.0" style="-fx-background-color: #00b6ff;">
                <children>
-                  <Pane prefHeight="72.0" prefWidth="426.0" style="-fx-background-color: #00b6ff;">
+                  <Pane onMouseClicked="#routeToSoftwares" prefHeight="72.0" prefWidth="426.0" style="-fx-background-color: #00b6ff;">
                      <children>
                         <Text fill="WHITE" layoutX="53.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Softwares" textAlignment="CENTER" wrappingWidth="320.0">
                            <font>
@@ -31,7 +31,7 @@
                         </Text>
                      </children>
                   </Pane>
-                  <Pane layoutX="847.0" prefHeight="72.0"  prefWidth="426.0" style="-fx-background-color: #00b6ff;">
+                  <Pane layoutX="847.0" prefHeight="72.0" prefWidth="426.0" style="-fx-background-color: #00b6ff;">
                      <children>
                         <Text fill="WHITE" layoutX="53.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About" textAlignment="CENTER" wrappingWidth="320.0">
                            <font>
@@ -40,6 +40,15 @@
                         </Text>
                      </children>
                   </Pane>
+               </children>
+            </Pane>
+            <Pane layoutX="-6.0" layoutY="702.0" prefHeight="98.0" prefWidth="1290.0" style="-fx-background-color: gray;">
+               <children>
+                  <Button layoutX="560.0" layoutY="24.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="170.0" text="Install">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
          </children></Pane>

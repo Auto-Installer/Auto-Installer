@@ -63,6 +63,7 @@ public class loginController {
     private Scene homeScene;
 
     public void setHomeScene(Scene scene){
+
         homeScene = scene;
     }
 
