@@ -39,6 +39,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static install.installController.setSoftwaresList;
 
 
 public class homeController {
@@ -234,7 +235,7 @@ public class homeController {
                     softwareToBeInstalled.remove(program);
                     System.out.println("Removed " +  program + " from being installed");
                 }
-
+                setSoftwaresList(softwareToBeInstalled);
             }
         });
 
@@ -254,7 +255,7 @@ public class homeController {
 
     // Nav Bar
     @FXML private void goToInstallation(){
-
+        System.out.println("Routing to Installation..");
         Stage primaryStage = (Stage) softwaresPane.getScene().getWindow();
         primaryStage.setScene(installScene);
     }
@@ -265,7 +266,6 @@ public class homeController {
     protected void initialize() {
         // Setting up where the software will be displayed
         programSelectionDisplay.getChildren().addAll(softwareDisplay);
-
         if (selectedSoftwareCategory == "DeveloperIDEs") {
             displayDeveloperIDEs();
         }
