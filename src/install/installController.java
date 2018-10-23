@@ -1,13 +1,24 @@
 package install;
+import com.dropbox.core.DbxException;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import server.Program;
+import server.Data;
 
+import java.io.IOException;
 import java.util.List;
+import com.dropbox.core.DbxException;
+import com.fasterxml.jackson.core.JsonProcessingException;
+
 
 public class installController {
     private Scene softwaresScene;
+    private ObjectMapper mapper = new ObjectMapper();
+    private Data data = new Data();
 
     @FXML AnchorPane anchorPane;
 
@@ -16,6 +27,17 @@ public class installController {
     public static void setSoftwaresList(List softwares){
         softwareList = softwares;
         System.out.println(softwareList);
+    }
+
+    // Installs programs from dropbox
+    @FXML private void installSoftwares() throws JsonProcessingException, IOException, DbxException {
+        System.out.println(softwareList);
+        for(int i=0; i < softwareList.size(); i++ ){
+            Object selectedProgram = softwareList.get(i);
+            String programJSON = mapper.writeValueAsString(selectedProgram);
+            Program program = mapper.readValue(programJSON, Program.class);
+            data.getDropboxFile((program.name).toString(), (program.category).toString(), ".zip", (program.exeName).toString());
+        }
     }
 
     public void setInstallScene(Scene scene){

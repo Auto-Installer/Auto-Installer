@@ -1,6 +1,4 @@
 package home;
-import com.dropbox.core.DbxException;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import javafx.animation.FadeTransition;
 import javafx.animation.SequentialTransition;
 import javafx.event.ActionEvent;
@@ -171,16 +169,6 @@ public class homeController {
         }
     }
 
-    // Installs programs from dropbox
-    public void installSoftwares() throws JsonProcessingException, IOException, DbxException {
-        System.out.println(softwareToBeInstalled);
-        for(int i=0; i < softwareToBeInstalled.size(); i++ ){
-            Object selectedProgram = softwareToBeInstalled.get(i);
-            String programJSON = mapper.writeValueAsString(selectedProgram);
-            Program program = mapper.readValue(programJSON, Program.class);
-            data.getDropboxFile((program.name).toString(), (program.category).toString(), ".zip", (program.exeName).toString());
-        }
-    }
 
     // Method for creating software icons
     public static Pane createSoftwareNode(Program program){

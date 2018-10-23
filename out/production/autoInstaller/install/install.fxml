@@ -44,7 +44,7 @@
             </Pane>
             <Pane layoutX="-6.0" layoutY="702.0" prefHeight="98.0" prefWidth="1290.0" style="-fx-background-color: gray;">
                <children>
-                  <Button layoutX="560.0" layoutY="24.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="170.0" text="Install">
+                  <Button onMouseClicked="#installSoftwares" layoutX="560.0" layoutY="24.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="170.0" text="INSTALL">
                      <font>
                         <Font size="24.0" />
                      </font>
