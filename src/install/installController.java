@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import server.Program;
@@ -20,7 +21,8 @@ public class installController {
     private ObjectMapper mapper = new ObjectMapper();
     private Data data = new Data();
 
-    @FXML AnchorPane anchorPane;
+    private @FXML AnchorPane anchorPane;
+    public @FXML ProgressBar installationProgress;
 
     private static List softwareList;
 
@@ -29,6 +31,8 @@ public class installController {
         System.out.println(softwareList);
     }
 
+
+
     // Installs programs from dropbox
     @FXML private void installSoftwares() throws JsonProcessingException, IOException, DbxException {
         System.out.println(softwareList);
@@ -36,7 +40,7 @@ public class installController {
             Object selectedProgram = softwareList.get(i);
             String programJSON = mapper.writeValueAsString(selectedProgram);
             Program program = mapper.readValue(programJSON, Program.class);
-            data.getDropboxFile((program.name).toString(), (program.category).toString(), ".zip", (program.exeName).toString());
+            data.getDropboxFile((program.name).toString(), (program.category).toString(), ".zip", (program.exeName).toString(), installationProgress);
         }
     }
 
@@ -50,5 +54,10 @@ public class installController {
         System.out.println("Routing to softwares..");
     }
 
+    @FXML
+    protected void initialize() {
+
+        System.out.println("yeet");
+    }
 
 }

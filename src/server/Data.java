@@ -1,6 +1,7 @@
 package server;
 
 import com.dropbox.core.DbxDownloader;
+import com.dropbox.core.v2.files.DownloadErrorException;
 import com.dropbox.core.v2.files.FileMetadata;
 import home.ProgramList;
 
@@ -18,7 +19,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import javafx.scene.control.ProgressBar;
 import mslinks.ShellLink;
+import install.installController;
 
 public class Data {
 
@@ -28,48 +31,85 @@ public class Data {
     private UnzipUtility unzipUtility = new UnzipUtility();
     private ShellLink shellLink = new ShellLink();
 
+
+
+    //throws DbxException, IOException
     public Data(){}
 
-    public void getDropboxFile(String name, String category, String fileType, String exeName) throws DbxException, IOException {
+    public void getDropboxFile(String name, String category, String fileType, String exeName, ProgressBar progressBar) {
 
-        String home = System.getProperty("user.home");
-        String root = "C:\\";
-        String ProgramFiles = root + "Program Files/";
-        String shortCutpath = "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs";
+        Thread.UncaughtExceptionHandler ueh = new Thread.UncaughtExceptionHandler(){
+            public void uncaughtException(Thread th, Throwable ex) {
+                System.out.println("Uncaught exception: " + ex);
+            }
+        };
 
-        // Location in dropbox where the software is located
-        String dropboxPath = "/Software/" + category + "/" + name + fileType;
-        // Download location
-        String zipPath = ProgramFiles + name + fileType;
+        Thread installationThread = new Thread(){
+            public void run() {
 
-        DbxDownloader<FileMetadata> downloader = client.files().download(dropboxPath);
 
-        try {
-            System.out.println("Installing " + name + "...");
-            String downloadPath = ProgramFiles + name;
-            String exePath = downloadPath + "/" + exeName;
-            FileOutputStream out = new FileOutputStream( ProgramFiles + name + fileType);
-            downloader.download(out);
-            out.close();
+                try {
+                    String home = System.getProperty("user.home");
+                    String root = "C:\\";
+                    String ProgramFiles = root + "Program Files/";
+                    String shortCutpath = "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs";
 
-            System.out.println("Installed .zip for " + name);
+                    // Location in dropbox where the software is located
+                    String dropboxPath = "/Software/" + category + "/" + name + fileType;
+                    // Download location
+                    String zipPath = ProgramFiles + name + fileType;
 
-            new File(downloadPath).mkdirs();
+                    DbxDownloader<FileMetadata> downloader = client.files().download(dropboxPath);
 
-            System.out.println("Created folder for " + name + ", beginning to unzip the installed .zip");
+                    progressBar.setProgress(0);
+                    System.out.println("Installing " + name + "...");
+                    String downloadPath = ProgramFiles + name;
+                    String exePath = downloadPath + "/" + exeName;
+                    FileOutputStream out = new FileOutputStream( ProgramFiles + name + fileType);
+                    downloader.download(out);
+                    out.close();
 
-            unzipUtility.extractFolder(zipPath, downloadPath);
+                    progressBar.setProgress(0.2);
+                    System.out.println("Progress: 20%");
 
-            System.out.println("creating shortcut from " + exePath);
-            shellLink.createLink(exePath, shortCutpath + "\\" + name + ".lnk");
+                    System.out.println("Installed .zip for " + name);
+                    progressBar.setProgress(0.4);
+                    System.out.println("Progress: 40%");
 
-            System.out.println("Successfully installed " + name);
 
-        } catch (DbxException ex) {
-            System.out.println(ex.getMessage());
-        }
+                    new File(downloadPath).mkdirs();
 
+                    System.out.println("Created folder for " + name + ", beginning to unzip the installed .zip");
+                    progressBar.setProgress(0.6);
+                    System.out.println("Progress: 60%");
+
+                    unzipUtility.extractFolder(zipPath, downloadPath);
+
+                    System.out.println("creating shortcut from " + exePath);
+                    shellLink.createLink(exePath, shortCutpath + "\\" + name + ".lnk");
+                    progressBar.setProgress(0.8);
+                    System.out.println("Progress: 80%");
+
+                    System.out.println("Successfully installed " + name);
+                    System.out.println("Progress: 100%");
+                    progressBar.setProgress(1);
+
+                } catch (DbxException ex) {
+                    System.out.println(ex.getMessage());
+                }
+                catch (IOException ex){
+                    System.out.println(ex.getMessage());
+                }
+
+            }
+        };
+
+        installationThread.setUncaughtExceptionHandler(ueh);
+        installationThread.start();
     }
+
+
+
 
     public static ProgramList getPrograms(){
 
