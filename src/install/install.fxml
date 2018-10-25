@@ -42,15 +42,17 @@
                   </Pane>
                </children>
             </Pane>
-            <Pane layoutX="-6.0" layoutY="702.0" prefHeight="98.0" prefWidth="1290.0" style="-fx-background-color: gray;">
-               <children>
-                  <Button onMouseClicked="#installSoftwares" layoutX="560.0" layoutY="24.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="170.0" text="INSTALL">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Button>
-               </children>
-            </Pane>
+            <ProgressBar layoutX="430.0" layoutY="414.0" prefHeight="29.0" prefWidth="420.0" progress="0.0" />
+            <Text layoutX="430.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Progress Text" textAlignment="CENTER" wrappingWidth="420.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Button layoutX="555.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#installSoftwares" prefHeight="51.0" prefWidth="170.0" text="INSTALL">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
          </children></Pane>
    </children>
 </AnchorPane>
