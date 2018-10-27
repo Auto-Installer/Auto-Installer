@@ -36,6 +36,16 @@ public class Data {
     //throws DbxException, IOException
     public Data(){}
 
+    public void updateProgressBar(ProgressBar progressBar,double progress){
+        Thread progressThread = new Thread(){
+            public void run(){
+                progressBar.setProgress(progress);
+                System.out.println("Progress: " + (progress * 100));
+            }
+        };
+        progressThread.start();
+    }
+
     public void getDropboxFile(String name, String category, String fileType, String exeName, ProgressBar progressBar) {
 
         Thread.UncaughtExceptionHandler ueh = new Thread.UncaughtExceptionHandler(){
@@ -61,7 +71,7 @@ public class Data {
 
                     DbxDownloader<FileMetadata> downloader = client.files().download(dropboxPath);
 
-                    progressBar.setProgress(0);
+                    updateProgressBar(progressBar, 0);
                     System.out.println("Installing " + name + "...");
                     String downloadPath = ProgramFiles + name;
                     String exePath = downloadPath + "/" + exeName;
@@ -69,30 +79,25 @@ public class Data {
                     downloader.download(out);
                     out.close();
 
-                    progressBar.setProgress(0.2);
-                    System.out.println("Progress: 20%");
+                    updateProgressBar(progressBar, 0.2);
 
                     System.out.println("Installed .zip for " + name);
-                    progressBar.setProgress(0.4);
-                    System.out.println("Progress: 40%");
+                    updateProgressBar(progressBar, 0.4);
 
 
                     new File(downloadPath).mkdirs();
 
                     System.out.println("Created folder for " + name + ", beginning to unzip the installed .zip");
-                    progressBar.setProgress(0.6);
-                    System.out.println("Progress: 60%");
+                    updateProgressBar(progressBar, 0.6);
 
                     unzipUtility.extractFolder(zipPath, downloadPath);
 
                     System.out.println("creating shortcut from " + exePath);
                     shellLink.createLink(exePath, shortCutpath + "\\" + name + ".lnk");
-                    progressBar.setProgress(0.8);
-                    System.out.println("Progress: 80%");
+                    updateProgressBar(progressBar, 0.8);
 
                     System.out.println("Successfully installed " + name);
-                    System.out.println("Progress: 100%");
-                    progressBar.setProgress(1);
+                    updateProgressBar(progressBar, 1);
 
                 } catch (DbxException ex) {
                     System.out.println(ex.getMessage());

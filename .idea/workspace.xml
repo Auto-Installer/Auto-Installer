@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/install/install.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/install.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install/installController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/install/installController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Data.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -70,8 +69,8 @@
       <file leaf-file-name="installController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/install/installController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="38" column="52" lean-forward="true" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
+            <state relative-caret-position="432">
+              <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,14 +81,14 @@
       <file leaf-file-name="Data.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/server/Data.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="52" column="41" lean-forward="true" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+            <state relative-caret-position="360">
+              <caret line="54" column="10" lean-forward="true" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1414#1415#0" expanded="true" />
-                <element signature="e#1493#1494#0" expanded="true" />
-                <element signature="e#1591#4124#0" expanded="true" />
-                <element signature="e#4123#4124#0" expanded="true" />
+                <element signature="e#1272#1439#0" expanded="true" />
+                <element signature="e#1438#1439#0" expanded="true" />
+                <element signature="e#1601#4098#0" expanded="true" />
+                <element signature="e#4097#4098#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -97,12 +96,12 @@
       </file>
       <file leaf-file-name="install.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/install/install.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
+            <state relative-caret-position="792">
               <caret line="44" column="52" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="52" />
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
     </leaf>
@@ -198,7 +197,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
+    <option name="x" value="554" />
+    <option name="y" value="191" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -214,7 +214,6 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -250,6 +249,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -398,11 +398,11 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23485653" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23698193" />
       <window_info anchor="bottom" id="Terminal" order="13" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.14427084" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1421875" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
@@ -472,12 +472,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/login/login.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="30" column="30" lean-forward="true" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -558,12 +558,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/login/login.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="22" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="22" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/login/login.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -580,12 +580,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/home/programNode.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/javafx.graphics/javafx/scene/image/Image.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -624,12 +624,12 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/home/softwares.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/home/homeController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -643,8 +643,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/install/installController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="38" column="52" lean-forward="true" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
+        <state relative-caret-position="432">
+          <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -652,23 +652,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/install/install.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
+        <state relative-caret-position="792">
           <caret line="44" column="52" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="52" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/Data.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="52" column="41" lean-forward="true" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+        <state relative-caret-position="360">
+          <caret line="54" column="10" lean-forward="true" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1414#1415#0" expanded="true" />
-            <element signature="e#1493#1494#0" expanded="true" />
-            <element signature="e#1591#4124#0" expanded="true" />
-            <element signature="e#4123#4124#0" expanded="true" />
+            <element signature="e#1272#1439#0" expanded="true" />
+            <element signature="e#1438#1439#0" expanded="true" />
+            <element signature="e#1601#4098#0" expanded="true" />
+            <element signature="e#4097#4098#0" expanded="true" />
           </folding>
         </state>
       </provider>
