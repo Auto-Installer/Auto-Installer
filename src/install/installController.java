@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import server.Program;
 import server.Data;
@@ -23,6 +24,7 @@ public class installController {
 
     private @FXML AnchorPane anchorPane;
     public @FXML ProgressBar installationProgress;
+    public @FXML Text progressText;
 
     private static List softwareList;
 
@@ -40,7 +42,7 @@ public class installController {
             Object selectedProgram = softwareList.get(i);
             String programJSON = mapper.writeValueAsString(selectedProgram);
             Program program = mapper.readValue(programJSON, Program.class);
-            data.getDropboxFile((program.name).toString(), (program.category).toString(), ".zip", (program.exeName).toString(), installationProgress);
+            data.getDropboxFile((program.name).toString(), (program.category).toString(), ".zip", (program.exeName).toString(), installationProgress, progressText);
         }
     }
 

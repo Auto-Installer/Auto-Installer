@@ -20,6 +20,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import javafx.scene.control.ProgressBar;
+import javafx.scene.text.Text;
 import mslinks.ShellLink;
 import install.installController;
 
@@ -36,17 +37,31 @@ public class Data {
     //throws DbxException, IOException
     public Data(){}
 
+    // Updates the installation progress bar
     public void updateProgressBar(ProgressBar progressBar,double progress){
         Thread progressThread = new Thread(){
             public void run(){
                 progressBar.setProgress(progress);
-                System.out.println("Progress: " + (progress * 100));
+                System.out.println("Progress: " + (progress * 100) + "%");
             }
         };
         progressThread.start();
     }
 
-    public void getDropboxFile(String name, String category, String fileType, String exeName, ProgressBar progressBar) {
+    // updates the progress text
+    public void updateProgressText(Text progressText, String progressMsg){
+        Thread progressTextThread = new Thread(){
+            public void run(){
+                progressText.setText(progressMsg);
+                System.out.println(progressMsg);
+            }
+
+        };
+        progressTextThread.start();
+    }
+
+    // Downloads the needed software from dropbox
+    public void getDropboxFile(String name, String category, String fileType, String exeName, ProgressBar progressBar, Text progressText) {
 
         Thread.UncaughtExceptionHandler ueh = new Thread.UncaughtExceptionHandler(){
             public void uncaughtException(Thread th, Throwable ex) {
@@ -72,7 +87,7 @@ public class Data {
                     DbxDownloader<FileMetadata> downloader = client.files().download(dropboxPath);
 
                     updateProgressBar(progressBar, 0);
-                    System.out.println("Installing " + name + "...");
+                    updateProgressText(progressText, "Installing " + name + "...");
                     String downloadPath = ProgramFiles + name;
                     String exePath = downloadPath + "/" + exeName;
                     FileOutputStream out = new FileOutputStream( ProgramFiles + name + fileType);
@@ -81,22 +96,22 @@ public class Data {
 
                     updateProgressBar(progressBar, 0.2);
 
-                    System.out.println("Installed .zip for " + name);
+                    updateProgressText(progressText,"Installed .zip for " + name);
                     updateProgressBar(progressBar, 0.4);
 
 
                     new File(downloadPath).mkdirs();
 
-                    System.out.println("Created folder for " + name + ", beginning to unzip the installed .zip");
+                    updateProgressText(progressText,"Created folder for " + name + ", beginning to unzip the installed .zip");
                     updateProgressBar(progressBar, 0.6);
 
                     unzipUtility.extractFolder(zipPath, downloadPath);
 
-                    System.out.println("creating shortcut from " + exePath);
+                    updateProgressText(progressText,"creating shortcut from " + exePath);
                     shellLink.createLink(exePath, shortCutpath + "\\" + name + ".lnk");
                     updateProgressBar(progressBar, 0.8);
 
-                    System.out.println("Successfully installed " + name);
+                    updateProgressText(progressText,"Successfully installed " + name);
                     updateProgressBar(progressBar, 1);
 
                 } catch (DbxException ex) {
