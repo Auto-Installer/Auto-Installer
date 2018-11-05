@@ -242,13 +242,11 @@ public class homeController {
 
 
     // Nav Bar
-    @FXML private void goToInstallation(){
+    @FXML private void goToInstallation() {
         System.out.println("Routing to Installation..");
         Stage primaryStage = (Stage) softwaresPane.getScene().getWindow();
         primaryStage.setScene(installScene);
     }
-
-
 
     @FXML
     protected void initialize() {

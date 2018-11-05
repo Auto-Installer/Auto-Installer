@@ -37,13 +37,18 @@ public class installController {
 
     // Installs programs from dropbox
     @FXML private void installSoftwares() throws JsonProcessingException, IOException, DbxException {
-        System.out.println(softwareList);
-        for(int i=0; i < softwareList.size(); i++ ){
-            Object selectedProgram = softwareList.get(i);
-            String programJSON = mapper.writeValueAsString(selectedProgram);
-            Program program = mapper.readValue(programJSON, Program.class);
-            data.getDropboxFile((program.name).toString(), (program.category).toString(), ".zip", (program.exeName).toString(), installationProgress, progressText);
+        try{
+            for (int i = 0; i < softwareList.size(); i++) {
+                Object selectedProgram = softwareList.get(i);
+                String programJSON = mapper.writeValueAsString(selectedProgram);
+                Program program = mapper.readValue(programJSON, Program.class);
+                data.getDropboxFile((program.name).toString(), (program.category).toString(), ".zip", (program.exeName).toString(), installationProgress, progressText);
+            }
+
+        }catch(NullPointerException ex){
+            progressText.setText("You haven't selected any software to Install!");
         }
+        
     }
 
     public void setInstallScene(Scene scene){

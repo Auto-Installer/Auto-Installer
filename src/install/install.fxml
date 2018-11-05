@@ -43,7 +43,7 @@
                </children>
             </Pane>
             <ProgressBar fx:id="installationProgress" layoutX="430.0" layoutY="414.0" prefHeight="29.0" prefWidth="420.0" progress="0.0" />
-            <Text fx:id="progressText" layoutX="430.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Progress Text" textAlignment="CENTER" wrappingWidth="420.0">
+            <Text fx:id="progressText" layoutX="430.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" textAlignment="CENTER" wrappingWidth="420.0">
                <font>
                   <Font size="15.0" />
                </font>

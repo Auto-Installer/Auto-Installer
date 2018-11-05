@@ -72,7 +72,6 @@ public class Data {
         Thread installationThread = new Thread(){
             public void run() {
 
-
                 try {
                     String home = System.getProperty("user.home");
                     String root = "C:\\";
@@ -90,6 +89,7 @@ public class Data {
                     updateProgressText(progressText, "Installing " + name + "...");
                     String downloadPath = ProgramFiles + name;
                     String exePath = downloadPath + "/" + exeName;
+
                     FileOutputStream out = new FileOutputStream( ProgramFiles + name + fileType);
                     downloader.download(out);
                     out.close();
@@ -98,7 +98,6 @@ public class Data {
 
                     updateProgressText(progressText,"Installed .zip for " + name);
                     updateProgressBar(progressBar, 0.4);
-
 
                     new File(downloadPath).mkdirs();
 
