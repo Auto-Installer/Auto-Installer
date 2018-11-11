@@ -3,12 +3,14 @@
     {
       "name": "Steam",
       "exeName":"",
+      "img_dir":"steam.png",
       "category": "gamingApplications",
       "version":1.2
     },
     {
       "name":"Epic Games",
       "exeName":"",
+      "img_dir":"steam.png",
       "category": "gamingApplication",
       "version":1.2
     }
@@ -17,48 +19,56 @@
     {
       "name":"Sublime",
       "exeName":"sublime_text.exe",
+      "img_dir":"sublime.png",
       "category": "IDEs",
       "version":1.2
     },
     {
       "name":"Visual Studio Code",
       "exeName":"Code.exe",
+      "img_dir":"vsCode.png",
       "category": "IDEs",
       "version":1.2
     },
     {
       "name":"Eclipse",
       "exeName":"",
+      "img_dir":"eclipse.png",
       "category": "IDEs",
       "version":1.2
     },
     {
       "name": "IntelliJ",
       "exeName":"",
+      "img_dir":"intellij.png",
       "category": "IDEs",
       "version": 1.2
     },
     {
       "name": "Notepad++",
       "exeName":"",
+      "img_dir":"notepadd++.png",
       "category": "IDEs",
       "version": 1.2
     },
     {
       "name": "Brackets.io",
       "exeName":"",
+      "img_dir":"brackets.png",
       "category": "IDEs",
       "version": 1.2
     },
     {
       "name": "Atom",
       "exeName":"",
+      "img_dir":"atom.png",
       "category": "IDEs",
       "version": 1.2
     },
     {
       "name": "CLion",
       "exeName":"",
+      "img_dir":"CLion.png",
       "category": "IDEs",
       "version": 1.2
     }

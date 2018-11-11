@@ -180,7 +180,7 @@ public class homeController {
         // Software Image
         ImageView softwareImgContainer = new ImageView();
 
-        Image softwareImg = new Image("./icons/vsCode.png");
+        Image softwareImg = new Image("./icons/" + program.img_dir);
         softwareImgContainer.setImage(softwareImg);
 
         System.out.println("Issue loading Image? " + softwareImg.isError());

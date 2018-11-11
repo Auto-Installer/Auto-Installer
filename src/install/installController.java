@@ -48,7 +48,7 @@ public class installController {
         }catch(NullPointerException ex){
             progressText.setText("You haven't selected any software to Install!");
         }
-        
+
     }
 
     public void setInstallScene(Scene scene){
