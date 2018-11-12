@@ -2,7 +2,7 @@
   "gamingApplications":[
     {
       "name": "Steam",
-      "exeName":"",
+      "exeName":"Steam.exe",
       "img_dir":"steam.png",
       "category": "gamingApplications",
       "version":1.2
@@ -32,21 +32,21 @@
     },
     {
       "name":"Eclipse",
-      "exeName":"",
+      "exeName":"eclipse.exe",
       "img_dir":"eclipse.png",
       "category": "IDEs",
       "version":1.2
     },
     {
       "name": "IntelliJ",
-      "exeName":"",
+      "exeName":"/bin/idea64.exe",
       "img_dir":"intellij.png",
       "category": "IDEs",
       "version": 1.2
     },
     {
       "name": "Notepad++",
-      "exeName":"",
+      "exeName":"notepad++",
       "img_dir":"notepadd++.png",
       "category": "IDEs",
       "version": 1.2
@@ -60,14 +60,14 @@
     },
     {
       "name": "Atom",
-      "exeName":"",
+      "exeName":"atom.exe",
       "img_dir":"atom.png",
       "category": "IDEs",
       "version": 1.2
     },
     {
       "name": "CLion",
-      "exeName":"",
+      "exeName":"/bin/clion64.exe",
       "img_dir":"CLion.png",
       "category": "IDEs",
       "version": 1.2
