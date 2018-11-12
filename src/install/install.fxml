@@ -13,7 +13,7 @@
          <children>
             <Pane prefHeight="72.0" prefWidth="1280.0" style="-fx-background-color: #00b6ff;">
                <children>
-                  <Pane onMouseClicked="#routeToSoftwares" prefHeight="72.0" prefWidth="426.0" styleClass="navBarCategory">
+                  <Pane layoutX="213.0" onMouseClicked="#routeToSoftwares" prefHeight="72.0" prefWidth="426.0" styleClass="navBarCategory">
                      <children>
                         <Text fill="WHITE" layoutX="53.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Softwares" textAlignment="CENTER" wrappingWidth="320.0">
                            <font>
@@ -22,18 +22,9 @@
                         </Text>
                      </children>
                   </Pane>
-                  <Pane layoutX="428.0" prefHeight="72.0" prefWidth="426.0" styleClass="navBarCategory">
+                  <Pane layoutX="641.0" prefHeight="72.0" prefWidth="426.0" styleClass="navBarCategory">
                      <children>
                         <Text fill="WHITE" layoutX="53.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Install" textAlignment="CENTER" wrappingWidth="320.0">
-                           <font>
-                              <Font name="Consolas" size="29.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </Pane>
-                  <Pane layoutX="847.0" prefHeight="72.0" prefWidth="426.0" styleClass="navBarCategory">
-                     <children>
-                        <Text fill="WHITE" layoutX="53.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About" textAlignment="CENTER" wrappingWidth="320.0">
                            <font>
                               <Font name="Consolas" size="29.0" />
                            </font>
